@@ -6,6 +6,7 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './app.vue',
     './error.vue',
+    './app/**/*.{js,vue,ts}', // Include new app directory
     'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
   ],
   darkMode: 'class',

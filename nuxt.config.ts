@@ -1,23 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-18',
-  devtools: { enabled: true },
-  
-  // SSR and rendering - disable SSR for GitHub Pages SPA
-  ssr: false,
-  
-  // Generate static site with index.html
-  routeRules: {
-    '/**': { prerender: true }
+  future: {
+    compatibilityVersion: 4,
   },
-  
+  devtools: { enabled: true },
+
+  // SSR - enabled for generic hosting
+  ssr: true,
+
+  // Generate static site with index.html
+
+
   // Modules
   modules: ['@nuxtjs/tailwindcss'],
-  
-  // Tailwind configuration
-  tailwindcss: {
-    configPath: './tailwind.config.js',
-  },
+
+
 
   // PostCSS configuration
   postcss: {
@@ -26,19 +24,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  
+
   // CSS
   css: ['~/assets/css/main.css'],
-  
-  // Nitro configuration untuk static generation dan GitHub Pages SPA
+
+  // Nitro configuration
   nitro: {
     prerender: {
       crawlLinks: true,
       routes: ['/', '/sitemap.xml', '/robots.txt', '/404.html'],
       ignore: ['/admin']
-    },
-    output: {
-      publicDir: 'docs'
     }
   },
 
@@ -46,24 +41,24 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/',
     head: {
-      title: 'Ahmad Rizqy Yourin - Laravel Developer | Portfolio',
+      title: 'Ahmad Rizqy Yourin - Fullstack Developer | Portfolio',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { 
-          name: 'description', 
-          content: 'Ahmad Rizqy Yourin - Full-stack Laravel developer. Explore my portfolio of Laravel projects, expertise in Livewire, DaisyUI, and SaaS solutions. Available for freelance work.'
+        {
+          name: 'description',
+          content: 'Ahmad Rizqy Yourin - Full-stack Laravel developer. Explore my portfolio of Laravel projects, expertise in Livewire and SaaS solutions. Available for freelance work.'
         },
         {
           name: 'keywords',
-          content: 'Ahmad Rizqy Yourin, yourin, Laravel developer, Laravel specialist, PHP developer, web developer, full-stack developer, Livewire, DaisyUI'
+          content: 'Ahmad Rizqy Yourin, yourin, Laravel developer, Laravel specialist, PHP developer, web developer, full-stack developer, Livewire'
         },
-        { 
-          property: 'og:type', 
+        {
+          property: 'og:type',
           content: 'website'
         },
-        { 
-          property: 'og:title', 
+        {
+          property: 'og:title',
           content: 'Ahmad Rizqy Yourin - Laravel Developer'
         },
         {
@@ -88,12 +83,15 @@ export default defineNuxtConfig({
         },
         {
           name: 'theme-color',
-          content: '#ef4444'
+          content: '#000000'
         }
       ],
+      style: [
+        { children: 'body { background-color: #000000; color: #ffffff; }' }
+      ],
       link: [
-        { 
-          rel: 'icon', 
+        {
+          rel: 'icon',
           type: 'image/svg+xml',
           href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23ef4444" width="100" height="100"/><text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial">Y</text></svg>'
         },
@@ -122,7 +120,6 @@ export default defineNuxtConfig({
               'Laravel',
               'PHP',
               'Livewire',
-              'DaisyUI',
               'Tailwind CSS',
               'Vue.js',
               'JavaScript',

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Persona 5 Global Styles */
+@layer base {
+  body {
+    @apply bg-zinc-900 text-white overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    /* Fallback, we'll style with utility classes */
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-blend-mode: overlay;
+  }
+
+  /* Custom Selection Color */
+  ::selection {
+    @apply bg-red-600 text-white;
+  }
+}
+
+@layer components {
+
+  /* P5 Utility Classes */
+  .p5-skew {
+    @apply transform -skew-x-12;
+  }
+
+  .p5-unskew {
+    @apply transform skew-x-12;
+  }
+
+  .p5-box {
+    @apply bg-black border-2 border-white p4 shadow-[8px_8px_0px_0px_rgba(220, 38, 38, 1)];
+  }
+
+  .p5-text {
+    @apply font-black italic uppercase tracking-tighter;
+  }
+}

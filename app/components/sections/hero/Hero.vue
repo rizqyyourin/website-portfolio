@@ -66,7 +66,7 @@
                  <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent mix-blend-normal z-10 opacity-50"></div>
                  
                  <div class="flex items-center justify-center w-full h-full p-12">
-                     <img src="/home/yourin/Desktop/Kerjaan/rizqyyourin.github.io/public/images/profile.jpg" 
+                     <img src="/images/profile.jpg" 
                           alt="Laravel Code" 
                           class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]" 
                      />

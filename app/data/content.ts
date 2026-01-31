@@ -120,13 +120,6 @@ export const techStacks = [
 
 export const projects = [
     {
-        title: "E-Voting Platform",
-        description: "Secure and transparent electronic voting platform with real-time result tracking, voter authentication, and comprehensive audit trails for trustworthy elections.",
-        image: "/images/e-vote.png",
-        link: "https://e-voting.yourin.my.id/",
-        tags: ["Laravel", "Livewire", "SQLite"]
-    },
-    {
         title: "ERP Minimal",
         description: "Lightweight enterprise resource planning system with inventory management, sales tracking, and financial reporting for small businesses.",
         image: "/images/erp.png",
@@ -139,20 +132,6 @@ export const projects = [
         image: "/images/qpay.png",
         link: "https://qpay.yourin.my.id/",
         tags: ["Laravel", "Livewire", "SQLite"]
-    },
-    {
-        title: "Jualin",
-        description: "E-commerce website with integrated AI chatbot features. Built with Laravel as backend and Next as frontend.",
-        image: "/images/Jualin.png",
-        link: "https://jualin.yourin.my.id/",
-        tags: ["Laravel", "Next.js", "Chatbot"]
-    },
-    {
-        title: "Laravel Playground",
-        description: "Interactive learning platform where users can explore and experiment with Laravel packages, features, and best practices in real-time.",
-        image: "/images/playground.png",
-        link: "https://playground.yourin.my.id/",
-        tags: ["Laravel", "React", "Inertia"]
     },
     {
         title: "Task Management System",

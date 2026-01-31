@@ -24,7 +24,7 @@
         <!-- P5 Menu (Left Side) -->
         <div class="w-full lg:w-1/3 flex flex-col gap-4 perspective-1000">
           <button 
-            v-for="tab in ['languages', 'databases', 'devops']" 
+            v-for="tab in tabs" 
             :key="tab"
             @click="activeSkillsTab = tab"
             class="group relative h-20 w-full transition-all duration-300 ease-out transform hover:-translate-x-2 focus:outline-none"
@@ -93,6 +93,8 @@ import { ref, computed } from 'vue'
 import { skills } from '~/data/content'
 
 const activeSkillsTab = ref('languages')
+
+const tabs = computed(() => Object.keys(skills))
 
 const currentSkills = computed(() => {
   return skills[activeSkillsTab.value as keyof typeof skills]

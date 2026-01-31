@@ -179,5 +179,13 @@ export const skills = {
         { name: "Docker", description: "Containerization", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png" },
         { name: "CI/CD", description: "Automated Pipelines", icon: "https://cdn-icons-png.flaticon.com/512/1005/1005141.png" }, // Generic CI/CD icon
         { name: "Git", description: "Version Control", icon: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" }
+    ],
+    others: [
+        { name: "REST API", description: "Architectural Style", icon: "https://www.shutterstock.com/image-vector/api-application-interface-icon-simple-600nw-2188533787.jpg" },
+        { name: "WebSocket", description: "Real-time Protocol", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT0GotAGXrAE49WpZlOvndF5w99JWfOEo00Q&s" },
+        { name: "Postman", description: "API Development", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+        { name: "Mockoon", description: "API Mocking", icon: "https://mockoon.com/images/logo.svg" },
+        { name: "Swagger", description: "API Toolkit", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GlozyrEsA25S68xqsWEgejZkSQPi2L7SBw&s" },
+        { name: "AsyncAPI", description: "Event-Driven Spec", icon: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4" }
     ]
 }

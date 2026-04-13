@@ -21,14 +21,23 @@
 
             <div class="relative z-10 text-center space-y-8">
                <!-- Header Text -->
-               <div class="space-y-2">
-                  <p class="font-black text-xl md:text-2xl text-red-600 italic tracking-widest bg-black inline-block px-2 transform -skew-x-12">
-                     TO THE VISITOR OF THIS SITE
-                  </p>
-                  <h2 class="text-4xl md:text-6xl font-black text-black uppercase tracking-tighter transform -skew-x-6">
-                     LET'S STEAL THE SHOW
+               <div class="space-y-8 pb-4">
+                  <!-- Ransom Note Style Calling Card -->
+                  <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3 font-black text-2xl md:text-4xl italic tracking-widest uppercase">
+                     <span data-aos="flip-up" data-aos-delay="200" data-aos-duration="400" class="inline-block bg-black text-red-600 px-3 py-1 transform -skew-x-12 shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] relative animate-wiggle">TO</span>
+                     <span data-aos="flip-down" data-aos-delay="300" data-aos-duration="400" class="inline-block bg-white text-black border-2 border-black px-3 py-1 transform skew-x-6 -rotate-3 translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">THE</span>
+                     <span data-aos="flip-right" data-aos-delay="400" data-aos-duration="400" class="inline-block bg-red-600 text-white px-3 py-1 transform -skew-x-6 rotate-2 -translate-y-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">VISITOR</span>
+                     <span data-aos="flip-left" data-aos-delay="500" data-aos-duration="400" class="inline-block bg-black text-white border border-red-600 px-3 py-1 transform skew-x-12 -rotate-2 offset-y-2 shadow-[4px_4px_0px_0px_rgba(220,38,38,1)]">OF</span>
+                     <span data-aos="flip-up" data-aos-delay="600" data-aos-duration="400" class="inline-block bg-white text-red-600 border-4 border-black px-3 py-1 transform -skew-x-12 rotate-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">THIS</span>
+                     <span data-aos="zoom-in" data-aos-delay="700" data-aos-duration="300" class="inline-block bg-red-600 text-black px-3 py-1 transform skew-x-6 -rotate-1 translate-y-1 scale-110 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">SITE</span>
+                  </div>
+                  
+                  <h2 data-aos="zoom-in" data-aos-delay="900" class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter transform -skew-x-6 relative inline-block mt-4 w-full">
+                     <span class="absolute inset-0 text-red-600 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 -z-10 mix-blend-darken">LET'S STEAL THE SHOW</span>
+                     <span class="relative">LET'S STEAL THE SHOW</span>
                   </h2>
-                  <p class="font-bold text-gray-600 max-w-2xl mx-auto italic font-mono text-base md:text-lg">
+                  
+                  <p data-aos="fade-up" data-aos-delay="1100" class="font-bold text-gray-600 max-w-2xl mx-auto italic font-mono text-base md:text-xl pt-2 border-t-2 border-black/10 inline-block px-4">
                      "Your distortion is an unfinished project. We will take your ideas and make them reality."
                   </p>
                </div>

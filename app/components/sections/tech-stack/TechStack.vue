@@ -14,15 +14,15 @@
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         <!-- Confidant Menu (Selector) -->
-        <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-4 flex flex-col space-y-6 perspective-1000">
-          <div class="flex flex-col space-y-4">
+        <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-4 flex perspective-1000">
+          <div class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible w-full gap-4 md:gap-4 pb-6 md:pb-0 snap-x snap-mandatory hide-scrollbar pr-8 md:pr-0">
             <button 
               v-for="(stack, index) in techStacks" 
               :key="stack.id"
               :data-aos="'fade-right'"
               :data-aos-delay="400 + (index * 100)"
               @click="selectedStackId = stack.id"
-              class="group relative h-24 w-full transition-all duration-300 ease-out transform hover:-translate-x-4 focus:outline-none"
+              class="group relative shrink-0 w-[75vw] max-w-[260px] md:max-w-none md:w-full h-24 snap-start md:snap-center transition-all duration-300 ease-out transform hover:-translate-y-2 md:hover:-translate-y-0 md:hover:-translate-x-4 focus:outline-none ml-2 md:ml-0"
             >
               <!-- Skewed Background -->
               <div 
@@ -107,6 +107,16 @@ const selectedStack = computed(() => {
 </script>
 
 <style scoped>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* P5 Zoom Animation */
 .p5-zoom-enter-active,
 .p5-zoom-leave-active {

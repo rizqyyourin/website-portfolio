@@ -22,15 +22,16 @@
       <div class="flex flex-col lg:flex-row gap-12 items-start">
         
         <!-- P5 Menu (Left Side) -->
-        <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex flex-col gap-4 perspective-1000">
-          <button 
-            v-for="(tab, index) in tabs" 
-            :key="tab"
-            :data-aos="'fade-right'"
-            :data-aos-delay="400 + index * 100"
-            @click="activeSkillsTab = tab"
-            class="group relative h-20 w-full transition-all duration-300 ease-out transform hover:-translate-x-2 focus:outline-none"
-          >
+        <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex perspective-1000">
+          <div class="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible w-full gap-4 pb-6 lg:pb-0 snap-x snap-mandatory hide-scrollbar pr-8 lg:pr-0">
+            <button 
+              v-for="(tab, index) in tabs" 
+              :key="tab"
+              :data-aos="'fade-right'"
+              :data-aos-delay="400 + index * 100"
+              @click="activeSkillsTab = tab"
+              class="group relative h-20 shrink-0 w-[75vw] max-w-[260px] lg:max-w-none lg:w-full snap-start lg:snap-center transition-all duration-300 ease-out transform hover:-translate-y-2 lg:hover:-translate-y-0 lg:hover:-translate-x-2 focus:outline-none ml-2 lg:ml-0"
+            >
             <!-- Skewed Background -->
             <div 
               class="absolute inset-0 bg-black border-2 border-white transform -skew-x-12 transition-all duration-300"
@@ -46,6 +47,7 @@
               <svg v-if="activeSkillsTab === tab" class="w-8 h-8 text-white animate-spin-slow transform skew-x-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
             </div>
           </button>
+          </div>
         </div>
 
         <!-- Content Area (Right Side) -->
@@ -58,7 +60,7 @@
                 <!-- Background Slash -->
                 <div class="absolute inset-0 bg-white/5 transform -skew-x-12 z-0"></div>
 
-                <div class="grid grid-cols-2 gap-6 relative z-10 p-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 p-4">
                   <div 
                     v-for="(skill, index) in currentSkills" 
                     :key="skill.name" 
@@ -104,6 +106,16 @@ const currentSkills = computed(() => {
 </script>
 
 <style scoped>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* Custom P5 Slide Animation */
 .p5-slide-enter-active,
 .p5-slide-leave-active {

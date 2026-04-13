@@ -19,9 +19,9 @@
          </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+      <div class="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar pb-12 pt-4 px-4 pr-12 -mx-4 md:px-0 md:mx-0">
         <template v-for="(project, index) in projects" :key="project.title">
-          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative perspective-1000">
+          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start perspective-1000 mr-2 md:mr-0 h-full">
              <!-- Card Wrapper -->
              <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1">
                 
@@ -72,7 +72,7 @@
           </a>
           
           <!-- Static Card (No Link) - Similar styling but simpler interaction -->
-          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="relative h-full transform transition-transform duration-500 hover:rotate-1">
+          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start h-full transform transition-transform duration-500 hover:rotate-1 mr-2 md:mr-0">
               <div class="absolute inset-0 bg-gray-800 transform translate-x-3 translate-y-3 -skew-x-3"></div>
               <div class="relative h-full bg-zinc-900 border-2 border-gray-600 flex flex-col transform -skew-x-3 overflow-hidden opacity-80">
                    <div class="relative h-56 bg-zinc-800 border-b-2 border-gray-600 flex items-center justify-center">
@@ -100,6 +100,16 @@ import { projects } from '~/data/content'
 </script>
 
 <style scoped>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .text-shadow-red {
    text-shadow: 4px 4px 0px rgba(220, 38, 38, 1);
 }

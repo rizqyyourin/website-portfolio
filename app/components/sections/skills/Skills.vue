@@ -10,11 +10,11 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block">
+      <div data-aos="fade-right" class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block">
         <h2 class="text-6xl md:text-8xl font-black text-white bg-black px-8 py-2 inline-block shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] tracking-tighter">
           SKILLS
         </h2>
-        <div class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4">
+        <div data-aos="fade-right" data-aos-delay="200" class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4">
           Phantoms of Logic
         </div>
       </div>
@@ -22,10 +22,12 @@
       <div class="flex flex-col lg:flex-row gap-12 items-start">
         
         <!-- P5 Menu (Left Side) -->
-        <div class="w-full lg:w-1/3 flex flex-col gap-4 perspective-1000">
+        <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex flex-col gap-4 perspective-1000">
           <button 
-            v-for="tab in tabs" 
+            v-for="(tab, index) in tabs" 
             :key="tab"
+            :data-aos="'fade-right'"
+            :data-aos-delay="400 + index * 100"
             @click="activeSkillsTab = tab"
             class="group relative h-20 w-full transition-all duration-300 ease-out transform hover:-translate-x-2 focus:outline-none"
           >
@@ -47,7 +49,7 @@
         </div>
 
         <!-- Content Area (Right Side) -->
-        <div class="w-full lg:w-2/3 relative min-h-[400px]">
+        <div data-aos="zoom-in-up" data-aos-delay="400" class="w-full lg:w-2/3 relative min-h-[400px]">
            <!-- Comic Panel Border -->
            <div class="absolute -inset-4 border-4 border-white transform -skew-x-2 opacity-50 pointer-events-none"></div>
            

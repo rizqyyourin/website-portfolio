@@ -3,22 +3,24 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Section Header -->
-      <div class="mb-12 transform -skew-x-12 ml-4 md:ml-12 border-l-8 border-red-600 pl-4">
+      <div data-aos="fade-right" class="mb-12 transform -skew-x-12 ml-4 md:ml-12 border-l-8 border-red-600 pl-4">
         <h2 class="text-5xl md:text-7xl font-black text-white bg-black inline-block px-4 py-1 shadow-[6px_6px_0px_0px_rgba(220,38,38,1)]">
           ARSENAL
         </h2>
-        <div class="text-white text-xl font-bold italic tracking-wider mt-2 bg-red-600 text-black px-2 inline-block transform skew-x-12">
+        <div data-aos="fade-right" data-aos-delay="200" class="text-white text-xl font-bold italic tracking-wider mt-2 bg-red-600 text-black px-2 inline-block transform skew-x-12">
           CHOOSE YOUR WEAPON
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         <!-- Confidant Menu (Selector) -->
-        <div class="md:col-span-4 flex flex-col space-y-6 perspective-1000">
+        <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-4 flex flex-col space-y-6 perspective-1000">
           <div class="flex flex-col space-y-4">
             <button 
-              v-for="stack in techStacks" 
+              v-for="(stack, index) in techStacks" 
               :key="stack.id"
+              :data-aos="'fade-right'"
+              :data-aos-delay="400 + (index * 100)"
               @click="selectedStackId = stack.id"
               class="group relative h-24 w-full transition-all duration-300 ease-out transform hover:-translate-x-4 focus:outline-none"
             >
@@ -43,7 +45,7 @@
         </div>
 
         <!-- Content Side -->
-        <div class="md:col-span-8 relative">
+        <div data-aos="zoom-in-left" data-aos-delay="500" class="md:col-span-8 relative">
            <!-- Comic Panel Border -->
            <div class="absolute -inset-6 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none"></div>
            
@@ -100,7 +102,7 @@ import { techStacks } from '~/data/content'
 const selectedStackId = ref('tall')
 
 const selectedStack = computed(() => {
-  return techStacks.find(s => s.id === selectedStackId.value) || techStacks[0]
+  return techStacks.find(s => s.id === selectedStackId.value) || techStacks[0]!
 })
 </script>
 

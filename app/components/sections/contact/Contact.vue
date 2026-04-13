@@ -7,7 +7,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
       
       <!-- Calling Card Container -->
-      <div class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out">
+      <div data-aos="zoom-in" data-aos-duration="1000" class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out">
          <!-- Card Background -->
          <div class="absolute inset-0 bg-black transform translate-x-4 translate-y-4 border-2 border-red-600"></div>
          <div class="relative bg-white p-8 md:p-16 border-4 border-black overflow-hidden shadow-[10px_10px_0px_0px_rgba(220,38,38,1)]">

@@ -12,21 +12,21 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-30">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <!-- Content Side -->
-        <div class="space-y-8 relative z-10">
+        <div class="space-y-8 relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
           
           <!-- Opening Tag -->
-          <div class="transform -skew-x-12 inline-block bg-black text-white px-4 py-1 border-2 border-white shadow-[4px_4px_0px_0px_#dc2626]">
+          <div data-aos="fade-right" data-aos-duration="600" class="transform -skew-x-12 inline-block bg-black text-white px-4 py-1 border-2 border-white shadow-[4px_4px_0px_0px_#dc2626]">
             <span class="text-xl font-black italic tracking-widest uppercase transform skew-x-12 inline-block">
               Fullstack Developer
             </span>
           </div>
 
           <!-- Name & Title -->
-          <div class="relative">
-             <h1 class="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter transform hover:-translate-y-2 transition-transform duration-300">
-               <span class="block transform -skew-x-6">AHMAD</span>
-               <span class="block text-red-600 bg-white px-2 transform skew-x-6 shadow-[8px_8px_0px_0px_#000000] -ml-4 w-fit">RIZQY</span>
-               <span class="block transform -skew-x-6 text-6xl md:text-8xl mt-2 text-gray-300">YOURIN</span>
+          <div class="relative w-full flex flex-col items-center md:items-start" data-aos="zoom-out-up" data-aos-duration="800" data-aos-delay="200">
+             <h1 class="text-7xl md:text-9xl font-black text-white leading-none tracking-tighter transform hover:-translate-y-2 transition-transform duration-300 flex flex-col items-center md:items-start">
+               <span class="block transform -skew-x-6 text-center md:text-left">AHMAD</span>
+               <span class="block text-red-600 bg-white px-2 transform skew-x-6 shadow-[8px_8px_0px_0px_#000000] md:-ml-4 w-fit mx-auto md:mx-0">RIZQY</span>
+               <span class="block transform -skew-x-6 text-6xl md:text-8xl mt-2 text-gray-300 text-center md:text-left">YOURIN</span>
              </h1>
              
              <!-- Floating Decorations -->
@@ -35,14 +35,14 @@
           </div>
 
           <!-- Description Box -->
-          <div class="bg-black/80 backdrop-blur-sm border-l-8 border-red-600 p-6 transform -skew-x-6 max-w-xl">
+          <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="400" class="bg-black/80 backdrop-blur-sm border-l-8 border-red-600 p-6 transform -skew-x-6 max-w-xl">
             <p class="text-xl md:text-2xl text-white font-bold italic transform skew-x-6 leading-relaxed">
               "{{ personalInfo.bio }}"
             </p>
           </div>
 
           <!-- CTA Buttons -->
-          <div class="flex flex-wrap gap-6 pt-4">
+          <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="600" class="flex flex-wrap justify-center md:justify-start gap-6 pt-4">
              <a href="#projects" class="group relative px-8 py-4 bg-red-600 text-white font-black text-xl italic tracking-wider transform -skew-x-12 hover:bg-white hover:text-red-600 transition-colors duration-300 shadow-[6px_6px_0px_0px_#ffffff]">
                <span class="inline-block transform skew-x-12">START MISSION</span>
              </a>
@@ -54,7 +54,7 @@
         </div>
 
         <!-- Visual Side (Phantom Thief / Code Aesthetic) -->
-        <div class="hidden lg:flex justify-center relative perspective-1000">
+        <div data-aos="fade-left" data-aos-duration="1000" class="hidden lg:flex justify-center relative perspective-1000">
            <!-- Character Silhouette / Polygon Art Placeholder -->
            <div class="relative w-96 h-[500px] transform rotate-y-12 rotate-z-2 hover:rotate-y-0 transition-transform duration-700 ease-out">
               <!-- Back Card -->

@@ -26,7 +26,10 @@ export default defineNuxtConfig({
   },
 
   // CSS
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    'aos/dist/aos.css'
+  ],
 
   // Nitro configuration
   nitro: {
@@ -87,7 +90,7 @@ export default defineNuxtConfig({
         }
       ],
       style: [
-        { children: 'body { background-color: #000000; color: #ffffff; }' }
+        { innerHTML: 'body { background-color: #000000; color: #ffffff; }' }
       ],
       link: [
         {

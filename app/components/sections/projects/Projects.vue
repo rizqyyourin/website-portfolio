@@ -7,21 +7,21 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div class="mb-16 text-center md:text-left">
+      <div data-aos="fade-right" data-aos-duration="600" class="mb-16 text-center md:text-left">
          <div class="inline-block transform -skew-x-12 bg-white px-2 mb-2">
             <span class="text-black font-black text-sm tracking-widest uppercase transform skew-x-12">Projects</span>
          </div>
-         <h2 class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 text-shadow-red">
+         <h2 data-aos="zoom-in" data-aos-delay="200" class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 text-shadow-red">
             MISSION LOG
          </h2>
-         <p class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 border-l-4 border-red-600 pl-4 inline-block bg-black/50 p-2">
+         <p data-aos="fade-up" data-aos-delay="400" class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 border-l-4 border-red-600 pl-4 inline-block bg-black/50 p-2">
             Showcase of projects and secure web applications.
          </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         <template v-for="(project, index) in projects" :key="project.title">
-          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" class="group block relative perspective-1000">
+          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative perspective-1000">
              <!-- Card Wrapper -->
              <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1">
                 
@@ -72,7 +72,7 @@
           </a>
           
           <!-- Static Card (No Link) - Similar styling but simpler interaction -->
-          <article v-else class="relative h-full transform transition-transform duration-500 hover:rotate-1">
+          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="relative h-full transform transition-transform duration-500 hover:rotate-1">
               <div class="absolute inset-0 bg-gray-800 transform translate-x-3 translate-y-3 -skew-x-3"></div>
               <div class="relative h-full bg-zinc-900 border-2 border-gray-600 flex flex-col transform -skew-x-3 overflow-hidden opacity-80">
                    <div class="relative h-56 bg-zinc-800 border-b-2 border-gray-600 flex items-center justify-center">

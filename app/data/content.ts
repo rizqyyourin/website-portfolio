@@ -46,7 +46,7 @@ export const techStacks = [
             },
             {
                 name: "Laravel",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/3840px-Laravel.svg.png",
                 borderColor: "border-red-200 dark:border-red-700",
                 bgGradient: "from-red-50 to-red-100 dark:from-red-900/30 dark:to-red-800/30"
             },
@@ -78,7 +78,7 @@ export const techStacks = [
             },
             {
                 name: "Laravel",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/3840px-Laravel.svg.png",
                 borderColor: "border-red-200 dark:border-red-700",
                 bgGradient: "from-red-50 to-red-100 dark:from-red-900/30 dark:to-red-800/30"
             },
@@ -124,7 +124,14 @@ export const projects = [
         description: "Lightweight enterprise resource planning system with inventory management, sales tracking, and financial reporting for small businesses.",
         image: "/images/erp.png",
         link: "https://erp.yourin.my.id/",
-        tags: ["Laravel", "Livewire", "SQLite"]
+        tags: ["Laravel", "Livewire", "PostgreSQL"]
+    },
+    {
+        title: "QPay - QR Payment System",
+        description: "Coming soon! A QR code-based payment system for seamless transactions, allowing users to pay using their smartphones by scanning QR codes at checkout.",
+        image: null, // Placeholder in original
+        link: "#", // No link in original
+        tags: ["Laravel", "Vue", "PostgreSQL"]
     },
     {
         title: "Task Management System",
@@ -137,8 +144,8 @@ export const projects = [
 
 export const skills = {
     languages: [
-        { name: "PHP", description: "Server-side Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" },
-        { name: "JavaScript", description: "Interactive Frontend", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" },
+        { name: "PHP", description: "Server-side Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png" },
+        { name: "JavaScript", description: "Interactive Frontend", icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" },
         { name: "Go", description: "High Performance", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png" },
         { name: "Python", description: "Data Science & Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" }
     ],

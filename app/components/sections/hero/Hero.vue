@@ -84,15 +84,15 @@
               <div class="absolute inset-0 pointer-events-none">
                  <!-- Laravel (Top Right) -->
                  <div class="absolute -right-8 top-12 w-16 h-16 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#dc2626] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png" class="w-8 h-8 object-contain" />
-                 </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/3840px-Laravel.svg.png" alt="">
+                </div>
                  <!-- PHP (Bottom Left) -->
                  <div class="absolute -left-12 bottom-20 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#777bb4] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" class="w-8 h-8 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png" />
                  </div>
                  <!-- JS (Top Left) -->
                  <div class="absolute -left-8 top-10 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#f0db4f] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png" class="w-6 h-6 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" />
                  </div>
                  <!-- Python (Bottom Right) -->
                  <div class="absolute -right-4 bottom-32 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#3776ab] z-30">

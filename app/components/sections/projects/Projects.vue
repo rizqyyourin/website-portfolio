@@ -38,11 +38,7 @@
                       <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
                          <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
                       </div>
-                      
-                      <!-- Date Stamp -->
-                      <div class="absolute top-0 right-0 bg-white text-black font-mono text-xs font-bold px-2 py-1 transform skew-x-12 translate-x-2 -translate-y-1">
-                         {{ new Date().getFullYear() }}/{{ String(index + 1).padStart(2, '0') }}/{{ String(Math.floor(Math.random() * 28) + 1).padStart(2, '0') }}
-                      </div>
+                     
                    </div>
 
                    <!-- Content Section -->

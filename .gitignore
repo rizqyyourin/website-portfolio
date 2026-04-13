@@ -50,9 +50,7 @@ yarn-error.log*
 # Misc
 .turbo
 .git
-.github
 # Build output
 docs/
 
 # Deployment config
-ecosystem.config.cjs

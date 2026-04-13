@@ -127,13 +127,6 @@ export const projects = [
         tags: ["Laravel", "Livewire", "SQLite"]
     },
     {
-        title: "QPay - QR Code Payment Platform",
-        description: "SaaS platform that enables merchants to generate QR codes for products. Customers scan the QR code to view product details and checkout seamlessly at the cashier with an easy payment experience.",
-        image: "/images/qpay.png",
-        link: "https://qpay.yourin.my.id/",
-        tags: ["Laravel", "Livewire", "SQLite"]
-    },
-    {
         title: "Task Management System",
         description: "Collaborative project management tool with teams, boards, and real-time collaboration features.",
         image: null, // Placeholder in original

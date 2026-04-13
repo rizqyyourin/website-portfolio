@@ -1,0 +1,58 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-portfolio-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: /var/www/web-portfolio
+      BRANCH: main
+      PM2_APP_NAME: yourin-nuxt
+      NUXT_PUBLIC_SITE_URL: https://yourin.my.id
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate production build
+        run: npm run build
+
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+
+      - name: Configure known hosts
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy to VPS
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_PORT: ${{ secrets.VPS_PORT }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          : "${VPS_PORT:=22}"
+          ssh -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" \
+            "export APP_DIR='${APP_DIR}' BRANCH='${BRANCH}' PM2_APP_NAME='${PM2_APP_NAME}' NUXT_PUBLIC_SITE_URL='${NUXT_PUBLIC_SITE_URL}'; cd '${APP_DIR}' && bash scripts/deploy-vps.sh"

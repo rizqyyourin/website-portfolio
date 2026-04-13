@@ -48,12 +48,6 @@ export default defineEventHandler(async (event) => {
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://qpay.yourin.my.id/</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 </urlset>`
   
   setHeader(event, 'Content-Type', 'application/xml')

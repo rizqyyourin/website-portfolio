@@ -96,27 +96,27 @@
                  </div>
                  <!-- Python (Bottom Right) -->
                  <div class="absolute -right-4 bottom-32 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#3776ab] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" class="w-8 h-8 object-contain" />
+                    <img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" />
                  </div>
                  <!-- Go (Top Center-Right) -->
                  <div class="absolute right-20 -top-8 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#00add8] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png" class="w-6 h-6 object-contain" />
+                    <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_LightBlue.png" />
                  </div>
                  <!-- Nuxt (Bottom Center) -->
                  <div class="absolute left-1/2 -bottom-8 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#00c58e] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nuxt_logo.svg/1200px-Nuxt_logo.svg.png" class="w-8 h-8 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nuxt_logo.svg/960px-Nuxt_logo.svg.png" />
                  </div>
                  <!-- Vue (Left Center) -->
                  <div class="absolute -left-16 top-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#42b883] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" class="w-8 h-8 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png" />
                  </div>
                  <!-- React (Right Center) -->
                  <div class="absolute -right-16 top-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#61dafb] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" class="w-8 h-8 object-contain" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" />
                  </div>
                  <!-- Next.js (Top Center-Left) -->
                  <div class="absolute left-20 -top-10 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#000000] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png" class="w-6 h-6 object-contain" />
+                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/nextjs-icon.png" />
                  </div>
               </div>
            </div>

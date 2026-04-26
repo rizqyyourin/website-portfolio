@@ -34,7 +34,7 @@ export const techStacks = [
         items: [
             {
                 name: "Tailwind CSS",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/960px-Tailwind_CSS_Logo.svg.png",
                 borderColor: "border-blue-200 dark:border-blue-700",
                 bgGradient: "from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30"
             },
@@ -66,7 +66,7 @@ export const techStacks = [
         items: [
             {
                 name: "Vue.js",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png",
                 borderColor: "border-emerald-200 dark:border-emerald-700",
                 bgGradient: "from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30"
             },
@@ -84,7 +84,7 @@ export const techStacks = [
             },
             {
                 name: "Tailwind CSS",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/960px-Tailwind_CSS_Logo.svg.png",
                 borderColor: "border-blue-200 dark:border-blue-700",
                 bgGradient: "from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30"
             }
@@ -110,7 +110,7 @@ export const techStacks = [
             },
             {
                 name: "Nuxt",
-                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nuxt_logo.svg/1200px-Nuxt_logo.svg.png",
+                logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nuxt_logo.svg/960px-Nuxt_logo.svg.png",
                 borderColor: "border-green-200 dark:border-green-700",
                 bgGradient: "from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30"
             }
@@ -146,13 +146,14 @@ export const skills = {
     languages: [
         { name: "PHP", description: "Server-side Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png" },
         { name: "JavaScript", description: "Interactive Frontend", icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" },
-        { name: "Go", description: "High Performance", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png" },
-        { name: "Python", description: "Data Science & Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" }
+        { name: "Go", description: "High Performance", icon: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_LightBlue.png" },
+        { name: "Python", description: "Data Science & Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/500px-Python-logo-notext.svg.png" }
     ],
     databases: [
-        { name: "SQLite", description: "Embedded Database", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/1200px-SQLite370.svg.png" },
+        { name: "SQLite", description: "Lightweight Database", icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fsqlite_logo_icon_169724.png&id=169724&pack_or_individual=pack" },
         { name: "MySQL", description: "Relational Database", icon: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
-        { name: "PostgreSQL", description: "Advanced SQL", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" }
+        { name: "PostgreSQL", description: "Advanced SQL", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/500px-Postgresql_elephant.svg.png" },
+        { name: "Redis", description: "In-Memory Cache", icon: "https://logowik.com/content/uploads/images/redis.jpg" }
     ],
     devops: [
         { name: "Docker", description: "Containerization", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png" },

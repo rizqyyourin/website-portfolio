@@ -128,9 +128,9 @@ export const projects = [
     },
     {
         title: "QPay - QR Payment System",
-        description: "Coming soon! A QR code-based payment system for seamless transactions, allowing users to pay using their smartphones by scanning QR codes at checkout.",
-        image: null, // Placeholder in original
-        link: "#", // No link in original
+        description: "A QR code-based payment system for seamless transactions, allowing users to pay using their smartphones by scanning QR codes at checkout.",
+        image: "/images/qpay.png",
+        link: "https://qpay.yourin.my.id",
         tags: ["Laravel", "Vue", "PostgreSQL"]
     },
     {

@@ -15,14 +15,31 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         <!-- Confidant Menu (Selector) -->
         <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-4 flex perspective-1000">
-          <div class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible w-full gap-4 md:gap-4 pb-6 md:pb-0 snap-x snap-mandatory hide-scrollbar pr-8 md:pr-0">
+          
+          <!-- Mobile: single active tab centered -->
+          <div class="flex md:hidden w-full">
+            <div class="relative w-full h-24">
+              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"></div>
+              <div class="absolute inset-0 flex items-center justify-between px-6">
+                <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
+                  {{ selectedStack.name }}
+                </span>
+                <div class="w-12 h-16 bg-white border-2 border-black transform skew-x-12 shadow-sm flex items-center justify-center">
+                  <span class="text-black font-bold text-xs">IX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop: full list -->
+          <div class="hidden md:flex flex-col w-full gap-4">
             <button 
               v-for="(stack, index) in techStacks" 
               :key="stack.id"
               :data-aos="'fade-right'"
               :data-aos-delay="400 + (index * 100)"
               @click="selectedStackId = stack.id"
-              class="group relative shrink-0 w-[75vw] max-w-[260px] md:max-w-none md:w-full h-24 snap-start md:snap-center transition-all duration-300 ease-out transform hover:-translate-y-2 md:hover:-translate-y-0 md:hover:-translate-x-4 focus:outline-none ml-2 md:ml-0"
+              class="group relative w-full h-24 transition-all duration-300 ease-out transform hover:-translate-x-4 focus:outline-none"
             >
               <!-- Skewed Background -->
               <div 
@@ -32,10 +49,9 @@
               
               <!-- Content (Unskewed) -->
               <div class="absolute inset-0 flex items-center justify-between px-6 z-20 pointer-events-none">
-                 <span class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-colors">
+                 <span class="text-3xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-colors">
                     {{ stack.name }}
                  </span>
-                 <!-- Tarot Card / Icon Mockup -->
                  <div class="w-12 h-16 bg-white border-2 border-black transform skew-x-12 rotate-12 group-hover:rotate-0 transition-transform shadow-sm flex items-center justify-center">
                     <span class="text-black font-bold text-xs">IX</span>
                  </div>
@@ -45,7 +61,13 @@
         </div>
 
         <!-- Content Side -->
-        <div data-aos="zoom-in-left" data-aos-delay="500" class="md:col-span-8 relative">
+        <div 
+          data-aos="zoom-in-left" 
+          data-aos-delay="500" 
+          class="md:col-span-8 relative"
+          @touchstart.passive="onTouchStart"
+          @touchend.passive="onTouchEnd"
+        >
            <!-- Comic Panel Border -->
            <div class="absolute -inset-6 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none"></div>
            
@@ -88,6 +110,17 @@
               </transition-group>
             </div>
            </transition>
+
+           <!-- Swipe Indicator Dots (mobile only) -->
+           <div class="flex md:hidden justify-center gap-2 mt-4">
+             <button
+               v-for="stack in techStacks"
+               :key="stack.id"
+               @click="selectedStackId = stack.id"
+               class="w-2 h-2 rounded-full transition-all duration-300"
+               :class="selectedStackId === stack.id ? 'bg-red-600 w-6' : 'bg-white/30'"
+             ></button>
+           </div>
         </div>
       </div>
     </div>
@@ -104,6 +137,28 @@ const selectedStackId = ref('tall')
 const selectedStack = computed(() => {
   return techStacks.find(s => s.id === selectedStackId.value) || techStacks[0]!
 })
+
+const currentIndex = computed(() => techStacks.findIndex(s => s.id === selectedStackId.value))
+
+let touchStartX = 0
+
+function onTouchStart(e: TouchEvent) {
+  touchStartX = e.touches[0]!.clientX
+}
+
+function onTouchEnd(e: TouchEvent) {
+  const delta = touchStartX - e.changedTouches[0]!.clientX
+  if (Math.abs(delta) < 50) return // ignore small swipes
+  if (delta > 0) {
+    // swipe left → next
+    const next = techStacks[currentIndex.value + 1]
+    if (next) selectedStackId.value = next.id
+  } else {
+    // swipe right → prev
+    const prev = techStacks[currentIndex.value - 1]
+    if (prev) selectedStackId.value = prev.id
+  }
+}
 </script>
 
 <style scoped>

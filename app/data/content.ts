@@ -134,11 +134,11 @@ export const projects = [
         tags: ["Laravel", "Vue", "PostgreSQL"]
     },
     {
-        title: "Task Management System",
-        description: "Collaborative project management tool with teams, boards, and real-time collaboration features.",
-        image: null, // Placeholder in original
-        link: "#", // No link in original
-        tags: ["Laravel", "Livewire", "PostgreSQL"]
+        title: "Ticketin",
+        description: "Customer experience CRM SaaS that helps companies handle customer complaints through service requests and email-based support channels.",
+        image: "/images/ticketin.png",
+        link: "https://ticketin.yourin.my.id",
+        tags: ["Next.js", "Prisma", "PostgreSQL"]
     }
 ]
 

@@ -71,18 +71,26 @@
              </article>
           </a>
           
-          <!-- Static Card (No Link) - Similar styling but simpler interaction -->
-          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start h-full transform transition-transform duration-500 hover:rotate-1 mr-2 md:mr-0">
-              <div class="absolute inset-0 bg-gray-800 transform translate-x-3 translate-y-3 -skew-x-3"></div>
-              <div class="relative h-full bg-zinc-900 border-2 border-gray-600 flex flex-col transform -skew-x-3 overflow-hidden opacity-80">
-                   <div class="relative h-56 bg-zinc-800 border-b-2 border-gray-600 flex items-center justify-center">
-                      <svg class="w-16 h-16 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+          <!-- Static Card (No Link) -->
+          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mr-2 md:mr-0">
+              <!-- Red Shadow Block -->
+              <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
+              <!-- Main Card Content -->
+              <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 overflow-hidden group-hover:border-red-400 transition-colors">
+                   <!-- Image Section -->
+                   <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
+                      <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                      <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
+                      <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
+                         <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
+                      </div>
                    </div>
-                   <div class="p-6 flex flex-col flex-grow">
-                      <h3 class="text-2xl font-black text-gray-500 italic uppercase mb-2">{{ project.title }}</h3>
-                      <p class="text-sm text-gray-600 font-medium mb-4 flex-grow font-mono">{{ project.description }}</p>
-                      <div class="flex flex-wrap gap-2">
-                         <span v-for="tag in project.tags" :key="tag" class="inline-block px-2 py-1 text-xs font-bold bg-zinc-800 text-gray-500 transform -skew-x-12 border border-gray-700">
+                   <!-- Content Section -->
+                   <div class="p-6 flex flex-col flex-grow relative">
+                      <h3 class="text-2xl font-black text-white italic uppercase mb-2 group-hover:text-red-500 transition-colors relative z-10">{{ project.title }}</h3>
+                      <p class="text-sm text-gray-400 font-medium mb-4 flex-grow font-mono leading-relaxed relative z-10">{{ project.description }}</p>
+                      <div class="flex flex-wrap gap-2 relative z-10">
+                         <span v-for="tag in project.tags" :key="tag" class="inline-block px-2 py-1 text-xs font-bold bg-white text-black transform -skew-x-12 border border-black hover:bg-red-600 hover:text-white transition-colors">
                             <span class="inline-block transform skew-x-12">#{{ tag }}</span>
                          </span>
                       </div>

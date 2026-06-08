@@ -10,11 +10,11 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div data-aos="fade-right" class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block">
-        <h2 class="text-6xl md:text-8xl font-black text-white bg-black px-8 py-2 inline-block shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] tracking-tighter">
+      <div data-aos="fade-right" class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block max-md:skew-x-0 max-md:ml-0 max-md:flex max-md:flex-col max-md:items-center max-md:w-full">
+        <h2 class="text-6xl md:text-8xl font-black text-white bg-black px-8 py-2 inline-block shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] max-md:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] tracking-tighter">
           SKILLS
         </h2>
-        <div data-aos="fade-right" data-aos-delay="200" class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4">
+        <div data-aos="fade-right" data-aos-delay="200" class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4 max-md:skew-x-0 max-md:translate-x-0">
           Phantoms of Logic
         </div>
       </div>
@@ -25,9 +25,9 @@
         <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex perspective-1000">
           
           <!-- Mobile: single active tab centered -->
-          <div class="flex lg:hidden w-full">
+          <div class="flex lg:hidden w-full p5-mobile-card-pad">
             <div class="relative w-full h-24">
-              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"></div>
+              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 max-md:skew-x-0 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] max-md:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"></div>
               <div class="absolute inset-0 flex items-center justify-between px-6">
                 <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
                   {{ activeSkillsTab }}
@@ -69,19 +69,19 @@
         <div 
           data-aos="zoom-in-up" 
           data-aos-delay="400" 
-          class="w-full lg:w-2/3 relative min-h-[400px]"
+          class="w-full lg:w-2/3 relative min-h-[400px] p5-mobile-safe p5-mobile-card-pad"
           @touchstart.passive="onTouchStart"
           @touchend.passive="onTouchEnd"
         >
            <!-- Comic Panel Border -->
-           <div class="absolute -inset-4 border-4 border-white transform -skew-x-2 opacity-50 pointer-events-none"></div>
+           <div class="absolute -inset-4 border-4 border-white transform -skew-x-2 opacity-50 pointer-events-none max-md:hidden"></div>
            
            <transition mode="out-in" name="p5-slide">
              <div :key="activeSkillsTab" class="relative">
                 <!-- Background Slash -->
-                <div class="absolute inset-0 bg-white/5 transform -skew-x-12 z-0"></div>
+                <div class="absolute inset-0 bg-white/5 transform -skew-x-12 max-md:skew-x-0 z-0"></div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 p-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 p-4 max-md:px-2 max-md:gap-4">
                   <div 
                     v-for="(skill, index) in currentSkills" 
                     :key="skill.name" 
@@ -95,7 +95,7 @@
                       <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 border-4 border-black group-hover:border-white transition-colors">
                         <img :src="skill.icon" :alt="skill.name" class="w-12 h-12 object-contain" />
                       </div>
-                      <h4 class="text-2xl font-black text-white italic uppercase tracking-wider mb-1 bg-black px-2 transform -skew-x-6 group-hover:bg-white group-hover:text-red-600 transition-colors">
+                      <h4 class="text-2xl font-black text-white italic uppercase tracking-wider mb-1 bg-black px-2 transform -skew-x-6 max-md:skew-x-0 group-hover:bg-white group-hover:text-red-600 transition-colors">
                         {{ skill.name }}
                       </h4>
                       <p class="text-sm font-bold text-gray-400 group-hover:text-black mt-2 font-mono">
@@ -185,6 +185,16 @@ function onTouchEnd(e: TouchEvent) {
 .p5-slide-leave-to {
   opacity: 0;
   transform: translateX(-50px) skewX(12deg);
+}
+
+@media (max-width: 767px) {
+  .p5-slide-enter-from {
+    transform: translateX(20px);
+  }
+
+  .p5-slide-leave-to {
+    transform: translateX(-20px);
+  }
 }
 
 /* Slow Spin for Star */

@@ -1,13 +1,13 @@
 <template>
-  <section id="tech-stack" class="py-24 md:py-32 bg-zinc-900 relative">
+  <section id="tech-stack" class="py-24 md:py-32 bg-zinc-900 relative max-md:overflow-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Section Header -->
-      <div data-aos="fade-right" class="mb-12 transform -skew-x-12 ml-4 md:ml-12 border-l-8 border-red-600 pl-4">
-        <h2 class="text-5xl md:text-7xl font-black text-white bg-black inline-block px-4 py-1 shadow-[6px_6px_0px_0px_rgba(220,38,38,1)]">
+      <div data-aos="fade-right" class="mb-12 transform -skew-x-12 ml-4 md:ml-12 border-l-8 border-red-600 pl-4 max-md:skew-x-0 max-md:ml-0 max-md:border-l-0 max-md:pl-0 max-md:text-center max-md:w-full">
+        <h2 class="text-5xl md:text-7xl font-black text-white bg-black inline-block px-4 py-1 shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] max-md:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)]">
           ARSENAL
         </h2>
-        <div data-aos="fade-right" data-aos-delay="200" class="text-white text-xl font-bold italic tracking-wider mt-2 bg-red-600 text-black px-2 inline-block transform skew-x-12">
+        <div data-aos="fade-right" data-aos-delay="200" class="text-white text-xl font-bold italic tracking-wider mt-2 bg-red-600 text-black px-2 inline-block transform skew-x-12 max-md:skew-x-0">
           CHOOSE YOUR WEAPON
         </div>
       </div>
@@ -17,9 +17,9 @@
         <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-4 flex perspective-1000">
           
           <!-- Mobile: single active tab centered -->
-          <div class="flex md:hidden w-full">
+          <div class="flex md:hidden w-full p5-mobile-card-pad">
             <div class="relative w-full h-24">
-              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"></div>
+              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 max-md:skew-x-0 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] max-md:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"></div>
               <div class="absolute inset-0 flex items-center justify-between px-6">
                 <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
                   {{ selectedStack.name }}
@@ -64,21 +64,21 @@
         <div 
           data-aos="zoom-in-left" 
           data-aos-delay="500" 
-          class="md:col-span-8 relative"
+          class="md:col-span-8 relative p5-mobile-safe p5-mobile-card-pad"
           @touchstart.passive="onTouchStart"
           @touchend.passive="onTouchEnd"
         >
            <!-- Comic Panel Border -->
-           <div class="absolute -inset-6 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none"></div>
+           <div class="absolute -inset-6 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none max-md:hidden"></div>
            
            <transition mode="out-in" name="p5-zoom">
-            <div :key="selectedStack.id" class="space-y-8 bg-black/50 p-6 backdrop-blur-sm border-2 border-white/20 transform -skew-x-2">
-              <div class="text-left relative">
+            <div :key="selectedStack.id" class="space-y-8 bg-black/50 p-6 backdrop-blur-sm border-2 border-white/20 transform -skew-x-2 max-md:skew-x-0 max-md:p-4">
+              <div class="text-left relative max-md:text-center">
                 <!-- Decorative Triangle -->
-                <div class="absolute -top-10 -left-10 w-0 h-0 border-l-[50px] border-l-transparent border-t-[50px] border-t-red-600 border-r-[50px] border-r-transparent transform -rotate-45"></div>
+                <div class="absolute -top-10 -left-10 w-0 h-0 border-l-[50px] border-l-transparent border-t-[50px] border-t-red-600 border-r-[50px] border-r-transparent transform -rotate-45 max-md:hidden"></div>
 
-                <h3 class="text-4xl md:text-5xl font-black text-white mb-3 italic transform skew-x-2 leading-none" v-html="selectedStack.title"></h3>
-                <p class="text-xl text-gray-300 font-bold font-mono transform skew-x-2 border-l-4 border-red-600 pl-4">
+                <h3 class="text-4xl md:text-5xl font-black text-white mb-3 italic transform skew-x-2 max-md:skew-x-0 leading-none" v-html="selectedStack.title"></h3>
+                <p class="text-xl text-gray-300 font-bold font-mono transform skew-x-2 max-md:skew-x-0 border-l-4 border-red-600 pl-4 max-md:border-l-0 max-md:pl-0">
                   {{ selectedStack.description }}
                 </p>
               </div>
@@ -87,7 +87,7 @@
               <transition-group 
                 tag="div" 
                 name="list"
-                class="grid grid-cols-2 sm:grid-cols-4 gap-4 transform skew-x-2"
+                class="grid grid-cols-2 sm:grid-cols-4 gap-4 transform skew-x-2 max-md:skew-x-0 max-md:gap-3"
               >
                 <div 
                   v-for="(item, index) in selectedStack.items" 

@@ -36,4 +36,15 @@
   .p5-text {
     @apply font-black italic uppercase tracking-tighter;
   }
+
+  /* Mobile: prevent skewed P5 cards from bleeding past viewport edges */
+  @media (max-width: 767px) {
+    .p5-mobile-safe {
+      @apply overflow-hidden;
+    }
+
+    .p5-mobile-card-pad {
+      @apply px-3;
+    }
+  }
 }

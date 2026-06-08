@@ -7,29 +7,29 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div data-aos="fade-right" data-aos-duration="600" class="mb-16 text-center md:text-left">
-         <div class="inline-block transform -skew-x-12 bg-white px-2 mb-2">
-            <span class="text-black font-black text-sm tracking-widest uppercase transform skew-x-12">Projects</span>
+      <div data-aos="fade-right" data-aos-duration="600" class="mb-16 text-center md:text-left max-md:px-2">
+         <div class="inline-block transform -skew-x-12 max-md:skew-x-0 bg-white px-2 mb-2">
+            <span class="text-black font-black text-sm tracking-widest uppercase transform skew-x-12 max-md:skew-x-0">Projects</span>
          </div>
-         <h2 data-aos="zoom-in" data-aos-delay="200" class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 text-shadow-red">
+         <h2 data-aos="zoom-in" data-aos-delay="200" class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 max-md:skew-x-0 text-shadow-red max-md:text-shadow-none">
             MISSION LOG
          </h2>
-         <p data-aos="fade-up" data-aos-delay="400" class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 border-l-4 border-red-600 pl-4 inline-block bg-black/50 p-2">
+         <p data-aos="fade-up" data-aos-delay="400" class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 max-md:skew-x-0 border-l-4 border-red-600 pl-4 max-md:border-l-0 max-md:pl-0 inline-block bg-black/50 p-2">
             Showcase of projects and secure web applications.
          </p>
       </div>
 
-      <div class="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar pb-12 pt-4 px-4 pr-12 -mx-4 md:px-0 md:mx-0">
+      <div class="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar pb-12 pt-4 px-6 md:px-0 p5-mobile-safe">
         <template v-for="(project, index) in projects" :key="project.title">
-          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start perspective-1000 mr-2 md:mr-0 h-full">
+          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center perspective-1000 mx-1 md:mx-0 h-full">
              <!-- Card Wrapper -->
-             <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1">
+             <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1 max-md:px-1">
                 
                 <!-- Red Shadow Block -->
-                <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
+                <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 max-md:translate-x-1 max-md:translate-y-1 max-md:skew-x-0 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
                 
                 <!-- Main Card Content -->
-                <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 overflow-hidden group-hover:border-red-400 transition-colors">
+                <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 max-md:skew-x-0 overflow-hidden group-hover:border-red-400 transition-colors">
                    
                    <!-- Image Section with Cutout Effect -->
                    <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
@@ -72,11 +72,11 @@
           </a>
           
           <!-- Static Card (No Link) -->
-          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group relative shrink-0 w-[85vw] max-w-[320px] md:max-w-none md:w-auto snap-start h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mr-2 md:mr-0">
+          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mx-1 md:mx-0 max-md:px-1">
               <!-- Red Shadow Block -->
-              <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
+              <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 max-md:translate-x-1 max-md:translate-y-1 max-md:skew-x-0 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
               <!-- Main Card Content -->
-              <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 overflow-hidden group-hover:border-red-400 transition-colors">
+              <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 max-md:skew-x-0 overflow-hidden group-hover:border-red-400 transition-colors">
                    <!-- Image Section -->
                    <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
                       <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -120,5 +120,11 @@ import { projects } from '~/data/content'
 
 .text-shadow-red {
    text-shadow: 4px 4px 0px rgba(220, 38, 38, 1);
+}
+
+@media (max-width: 767px) {
+  .text-shadow-none {
+    text-shadow: none;
+  }
 }
 </style>

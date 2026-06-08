@@ -7,10 +7,10 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
       
       <!-- Calling Card Container -->
-      <div data-aos="zoom-in" data-aos-duration="1000" class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out">
+      <div data-aos="zoom-in" data-aos-duration="1000" class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out max-md:rotate-0 max-md:px-2">
          <!-- Card Background -->
-         <div class="absolute inset-0 bg-black transform translate-x-4 translate-y-4 border-2 border-red-600"></div>
-         <div class="relative bg-white p-8 md:p-16 border-4 border-black overflow-hidden shadow-[10px_10px_0px_0px_rgba(220,38,38,1)]">
+         <div class="absolute inset-0 bg-black transform translate-x-4 translate-y-4 border-2 border-red-600 max-md:translate-x-2 max-md:translate-y-2"></div>
+         <div class="relative bg-white p-8 md:p-16 border-4 border-black overflow-hidden shadow-[10px_10px_0px_0px_rgba(220,38,38,1)] max-md:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)]">
             
             <!-- Logo Stamp -->
             <div class="absolute top-4 right-4 md:top-8 md:right-8 opacity-20 transform rotate-12">
@@ -43,42 +43,42 @@
                </div>
 
                <!-- Contact Grid -->
-               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
+               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 max-md:px-3 max-md:gap-4">
                   <!-- Email -->
-                  <a :href="`mailto:${personalInfo.email}`" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                  <a :href="`mailto:${personalInfo.email}`" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
+                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
                      <div class="absolute inset-0 bg-red-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
                         <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">SEND EMAIL</span>
                      </div>
                   </a>
 
                   <!-- WhatsApp -->
-                  <a :href="personalInfo.socials.whatsapp" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                  <a :href="personalInfo.socials.whatsapp" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
+                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
                      <div class="absolute inset-0 bg-green-500 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
                         <span class="text-black font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">WHATSAPP</span>
                      </div>
                   </a>
 
                   <!-- LinkedIn -->
-                  <a :href="personalInfo.socials.linkedin" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                  <a :href="personalInfo.socials.linkedin" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
+                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
                      <div class="absolute inset-0 bg-blue-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
                         <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">LINKEDIN</span>
                      </div>
                   </a>
                   
                   <!-- GitHub -->
-                  <a :href="personalInfo.socials.github" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                  <a :href="personalInfo.socials.github" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
+                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
                      <div class="absolute inset-0 bg-gray-800 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
                         <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">GITHUB</span>
                      </div>
                   </a>
 
                   <!-- Instagram -->
-                  <a :href="personalInfo.socials.instagram" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                  <a :href="personalInfo.socials.instagram" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
+                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
                      <div class="absolute inset-0 bg-pink-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
                         <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">INSTAGRAM</span>
                      </div>

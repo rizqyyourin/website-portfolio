@@ -23,14 +23,29 @@
         
         <!-- P5 Menu (Left Side) -->
         <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex perspective-1000">
-          <div class="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible w-full gap-4 pb-6 lg:pb-0 snap-x snap-mandatory hide-scrollbar pr-8 lg:pr-0">
+          
+          <!-- Mobile: single active tab centered -->
+          <div class="flex lg:hidden w-full">
+            <div class="relative w-full h-24">
+              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"></div>
+              <div class="absolute inset-0 flex items-center justify-between px-6">
+                <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
+                  {{ activeSkillsTab }}
+                </span>
+                <svg class="w-8 h-8 text-white animate-spin-slow transform skew-x-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop: full list -->
+          <div class="hidden lg:flex flex-col w-full gap-4">
             <button 
               v-for="(tab, index) in tabs" 
               :key="tab"
               :data-aos="'fade-right'"
               :data-aos-delay="400 + index * 100"
               @click="activeSkillsTab = tab"
-              class="group relative h-20 shrink-0 w-[75vw] max-w-[260px] lg:max-w-none lg:w-full snap-start lg:snap-center transition-all duration-300 ease-out transform hover:-translate-y-2 lg:hover:-translate-y-0 lg:hover:-translate-x-2 focus:outline-none ml-2 lg:ml-0"
+              class="group relative h-20 w-full transition-all duration-300 ease-out transform hover:-translate-x-2 focus:outline-none"
             >
             <!-- Skewed Background -->
             <div 
@@ -51,7 +66,13 @@
         </div>
 
         <!-- Content Area (Right Side) -->
-        <div data-aos="zoom-in-up" data-aos-delay="400" class="w-full lg:w-2/3 relative min-h-[400px]">
+        <div 
+          data-aos="zoom-in-up" 
+          data-aos-delay="400" 
+          class="w-full lg:w-2/3 relative min-h-[400px]"
+          @touchstart.passive="onTouchStart"
+          @touchend.passive="onTouchEnd"
+        >
            <!-- Comic Panel Border -->
            <div class="absolute -inset-4 border-4 border-white transform -skew-x-2 opacity-50 pointer-events-none"></div>
            
@@ -85,6 +106,18 @@
                 </div>
              </div>
            </transition>
+
+           <!-- Swipe Indicator Dots (mobile only) -->
+           <div class="flex lg:hidden justify-center gap-2 mt-8 relative z-20">
+             <button
+               v-for="tab in tabs"
+               :key="tab"
+               @click="activeSkillsTab = tab"
+               class="w-2 h-2 rounded-full transition-all duration-300"
+               :class="activeSkillsTab === tab ? 'bg-red-600 w-6' : 'bg-white/30'"
+               aria-label="Select tab"
+             ></button>
+           </div>
         </div>
 
       </div>
@@ -103,6 +136,28 @@ const tabs = computed(() => Object.keys(skills))
 const currentSkills = computed(() => {
   return skills[activeSkillsTab.value as keyof typeof skills]
 })
+
+const currentIndex = computed(() => tabs.value.indexOf(activeSkillsTab.value))
+
+let touchStartX = 0
+
+function onTouchStart(e: TouchEvent) {
+  touchStartX = e.touches[0]!.clientX
+}
+
+function onTouchEnd(e: TouchEvent) {
+  const delta = touchStartX - e.changedTouches[0]!.clientX
+  if (Math.abs(delta) < 50) return // ignore small swipes
+  if (delta > 0) {
+    // swipe left → next
+    const next = tabs.value[currentIndex.value + 1]
+    if (next) activeSkillsTab.value = next
+  } else {
+    // swipe right → prev
+    const prev = tabs.value[currentIndex.value - 1]
+    if (prev) activeSkillsTab.value = prev
+  }
+}
 </script>
 
 <style scoped>

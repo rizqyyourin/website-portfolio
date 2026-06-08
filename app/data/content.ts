@@ -150,7 +150,7 @@ export const skills = {
         { name: "Python", description: "Data Science & Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/500px-Python-logo-notext.svg.png" }
     ],
     databases: [
-        { name: "SQLite", description: "Lightweight Database", icon: "https://icon-icons.com/download-file?file=https%3A%2F%2Fimages.icon-icons.com%2F2699%2FPNG%2F512%2Fsqlite_logo_icon_169724.png&id=169724&pack_or_individual=pack" },
+        { name: "SQLite", description: "Lightweight Database", icon: "https://icon.icepanel.io/Technology/svg/SQLite.svg" },
         { name: "MySQL", description: "Relational Database", icon: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
         { name: "PostgreSQL", description: "Advanced SQL", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/500px-Postgresql_elephant.svg.png" },
         { name: "Redis", description: "In-Memory Cache", icon: "https://logowik.com/content/uploads/images/redis.jpg" }

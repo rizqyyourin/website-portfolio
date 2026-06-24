@@ -7,7 +7,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
       
       <!-- Calling Card Container -->
-      <div data-aos="zoom-in" data-aos-duration="1000" class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out max-md:rotate-0 max-md:px-2">
+      <div data-aos="p5-zoom-in" data-aos-duration="850" class="relative transform -rotate-2 md:-rotate-1 hover:rotate-0 transition-transform duration-500 ease-out max-md:rotate-0 max-md:px-2">
          <!-- Card Background -->
          <div class="absolute inset-0 bg-black transform translate-x-4 translate-y-4 border-2 border-red-600 max-md:translate-x-2 max-md:translate-y-2"></div>
          <div class="relative bg-white p-8 md:p-16 border-4 border-black overflow-hidden shadow-[10px_10px_0px_0px_rgba(220,38,38,1)] max-md:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)]">
@@ -32,12 +32,12 @@
                      <span data-aos="zoom-in" data-aos-delay="700" data-aos-duration="300" class="inline-block bg-red-600 text-black px-3 py-1 transform skew-x-6 -rotate-1 translate-y-1 scale-110 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">SITE</span>
                   </div>
                   
-                  <h2 data-aos="zoom-in" data-aos-delay="900" class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter transform -skew-x-6 relative inline-block mt-4 w-full">
+                  <h2 data-aos="p5-zoom-in" data-aos-delay="600" data-aos-duration="750" class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter transform -skew-x-6 relative inline-block mt-4 w-full">
                      <span class="absolute inset-0 text-red-600 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 -z-10 mix-blend-darken">LET'S STEAL THE SHOW</span>
                      <span class="relative">LET'S STEAL THE SHOW</span>
                   </h2>
                   
-                  <p data-aos="fade-up" data-aos-delay="1100" class="font-bold text-gray-600 max-w-2xl mx-auto italic font-mono text-base md:text-xl pt-2 border-t-2 border-black/10 inline-block px-4">
+                  <p data-aos="p5-rise" data-aos-delay="750" data-aos-duration="650" class="font-bold text-gray-600 max-w-2xl mx-auto italic font-mono text-base md:text-xl pt-2 border-t-2 border-black/10 inline-block px-4">
                      "Your distortion is an unfinished project. We will take your ideas and make them reality."
                   </p>
                </div>

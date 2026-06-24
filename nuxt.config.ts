@@ -28,7 +28,8 @@ export default defineNuxtConfig({
   // CSS
   css: [
     '~/assets/css/main.css',
-    'aos/dist/aos.css'
+    'aos/dist/aos.css',
+    '~/assets/css/aos-custom.css',
   ],
 
   // Nitro configuration

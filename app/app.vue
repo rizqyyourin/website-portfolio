@@ -47,7 +47,8 @@
 import { useLoading } from '~/composables/useLoading'
 import LoadingScreen from '~/components/ui/LoadingScreen.vue'
 
-const { isLoading, progress, startLoading, finishLoading, setProgress } = useLoading()
+const { isLoading, progress } = useLoading()
+const { $refreshAos } = useNuxtApp()
 
 useHead({
   bodyAttrs: {
@@ -78,6 +79,7 @@ onMounted(() => {
     // Give time for 100% to be visible before hiding
     setTimeout(() => {
       isLoading.value = false
+      nextTick(() => $refreshAos?.())
     }, 500)
   }
 

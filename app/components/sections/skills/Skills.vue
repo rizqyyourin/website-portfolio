@@ -10,11 +10,11 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div data-aos="fade-right" class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block max-md:skew-x-0 max-md:ml-0 max-md:flex max-md:flex-col max-md:items-center max-md:w-full">
+      <div data-aos="p5-drop" data-aos-duration="700" class="mb-16 transform -skew-x-12 ml-4 md:ml-12 inline-block max-md:skew-x-0 max-md:ml-0 max-md:flex max-md:flex-col max-md:items-center max-md:w-full">
         <h2 class="text-6xl md:text-8xl font-black text-white bg-black px-8 py-2 inline-block shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] max-md:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] tracking-tighter">
           SKILLS
         </h2>
-        <div data-aos="fade-right" data-aos-delay="200" class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4 max-md:skew-x-0 max-md:translate-x-0">
+        <div data-aos="p5-drop" data-aos-delay="150" data-aos-duration="600" class="mt-2 bg-white text-black px-4 py-1 inline-block text-xl font-bold uppercase tracking-widest transform skew-x-12 translate-x-4 max-md:skew-x-0 max-md:translate-x-0">
           Phantoms of Logic
         </div>
       </div>
@@ -22,19 +22,26 @@
       <div class="flex flex-col lg:flex-row gap-12 items-start">
         
         <!-- P5 Menu (Left Side) -->
-        <div data-aos="fade-up" data-aos-delay="300" class="w-full lg:w-1/3 flex perspective-1000">
+        <div class="w-full lg:w-1/3 flex perspective-1000">
           
           <!-- Mobile: single active tab centered -->
-          <div class="flex lg:hidden w-full p5-mobile-card-pad">
-            <div class="relative w-full h-24">
-              <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 max-md:skew-x-0 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] max-md:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"></div>
-              <div class="absolute inset-0 flex items-center justify-between px-6">
-                <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
-                  {{ activeSkillsTab }}
-                </span>
-                <svg class="w-8 h-8 text-white animate-spin-slow transform skew-x-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+          <div
+            data-aos="p5-slot-drop"
+            data-aos-duration="650"
+            data-aos-delay="200"
+            class="flex lg:hidden w-full p5-mobile-card-pad"
+          >
+            <transition :name="slideTransition" mode="out-in">
+              <div :key="activeSkillsTab" class="relative w-full h-24">
+                <div class="absolute inset-0 bg-red-600 border-2 border-red-600 transform -skew-x-12 max-md:skew-x-0 shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] max-md:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"></div>
+                <div class="absolute inset-0 flex items-center justify-between px-6">
+                  <span class="text-2xl font-black italic uppercase tracking-tighter text-white transform skew-x-12 transition-all duration-300">
+                    {{ activeSkillsTab }}
+                  </span>
+                  <svg class="w-8 h-8 text-white animate-spin-slow transform skew-x-12" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/></svg>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
 
           <!-- Desktop: full list -->
@@ -42,9 +49,10 @@
             <button 
               v-for="(tab, index) in tabs" 
               :key="tab"
-              :data-aos="'fade-right'"
-              :data-aos-delay="400 + index * 100"
-              @click="activeSkillsTab = tab"
+              data-aos="p5-slot-drop"
+              :data-aos-delay="250 + index * 80"
+              data-aos-duration="550"
+              @click="selectTab(tab)"
               class="group relative h-20 w-full transition-all duration-300 ease-out transform hover:-translate-x-2 focus:outline-none"
             >
             <!-- Skewed Background -->
@@ -67,16 +75,17 @@
 
         <!-- Content Area (Right Side) -->
         <div 
-          data-aos="zoom-in-up" 
-          data-aos-delay="400" 
-          class="w-full lg:w-2/3 relative min-h-[400px] p5-mobile-safe p5-mobile-card-pad"
+          data-aos="p5-rise"
+          data-aos-delay="300"
+          data-aos-duration="750"
+          class="w-full lg:w-2/3 relative min-h-[400px] p5-mobile-safe p5-mobile-card-pad overflow-hidden touch-pan-y"
           @touchstart.passive="onTouchStart"
           @touchend.passive="onTouchEnd"
         >
            <!-- Comic Panel Border -->
            <div class="absolute -inset-4 border-4 border-white transform -skew-x-2 opacity-50 pointer-events-none max-md:hidden"></div>
            
-           <transition mode="out-in" name="p5-slide">
+           <transition :name="slideTransition" mode="out-in">
              <div :key="activeSkillsTab" class="relative">
                 <!-- Background Slash -->
                 <div class="absolute inset-0 bg-white/5 transform -skew-x-12 max-md:skew-x-0 z-0"></div>
@@ -84,9 +93,9 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10 p-4 max-md:px-2 max-md:gap-4">
                   <div 
                     v-for="(skill, index) in currentSkills" 
-                    :key="skill.name" 
-                    class="group relative bg-black/80 border-2 border-white/20 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-black hover:border-red-500 hover:shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] overflow-hidden"
-                    :style="{ animationDelay: `${index * 100}ms` }"
+                    :key="`${activeSkillsTab}-${skill.name}`"
+                    class="skills-reveal-item group relative bg-black/80 border-2 border-white/20 p-6 transform transition-all duration-300 hover:scale-105 hover:bg-black hover:border-red-500 hover:shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] overflow-hidden"
+                    :style="{ '--reveal-delay': `${index * 80}ms` }"
                   > 
                     <!-- Dynamic Diagonal Background on Hover -->
                     <div class="absolute inset-0 bg-red-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out -z-10 skew-y-12"></div>
@@ -112,7 +121,7 @@
              <button
                v-for="tab in tabs"
                :key="tab"
-               @click="activeSkillsTab = tab"
+               @click="selectTab(tab)"
                class="w-2 h-2 rounded-full transition-all duration-300"
                :class="activeSkillsTab === tab ? 'bg-red-600 w-6' : 'bg-white/30'"
                aria-label="Select tab"
@@ -130,6 +139,7 @@ import { ref, computed } from 'vue'
 import { skills } from '~/data/content'
 
 const activeSkillsTab = ref('languages')
+const slideDirection = ref<'next' | 'prev'>('next')
 
 const tabs = computed(() => Object.keys(skills))
 
@@ -139,23 +149,41 @@ const currentSkills = computed(() => {
 
 const currentIndex = computed(() => tabs.value.indexOf(activeSkillsTab.value))
 
+const slideTransition = computed(() =>
+  slideDirection.value === 'next' ? 'skills-slide-next' : 'skills-slide-prev'
+)
+
+function selectTab(tab: string) {
+  if (tab === activeSkillsTab.value) return
+
+  const newIndex = tabs.value.indexOf(tab)
+  if (newIndex > currentIndex.value) slideDirection.value = 'next'
+  else if (newIndex < currentIndex.value) slideDirection.value = 'prev'
+
+  activeSkillsTab.value = tab
+}
+
 let touchStartX = 0
+let touchStartY = 0
 
 function onTouchStart(e: TouchEvent) {
   touchStartX = e.touches[0]!.clientX
+  touchStartY = e.touches[0]!.clientY
 }
 
 function onTouchEnd(e: TouchEvent) {
-  const delta = touchStartX - e.changedTouches[0]!.clientX
-  if (Math.abs(delta) < 50) return // ignore small swipes
-  if (delta > 0) {
-    // swipe left → next
+  const touch = e.changedTouches[0]!
+  const deltaX = touchStartX - touch.clientX
+  const deltaY = touchStartY - touch.clientY
+
+  if (Math.abs(deltaX) < 50 || Math.abs(deltaY) > Math.abs(deltaX)) return
+
+  if (deltaX > 0) {
     const next = tabs.value[currentIndex.value + 1]
-    if (next) activeSkillsTab.value = next
+    if (next) selectTab(next)
   } else {
-    // swipe right → prev
     const prev = tabs.value[currentIndex.value - 1]
-    if (prev) activeSkillsTab.value = prev
+    if (prev) selectTab(prev)
   }
 }
 </script>
@@ -171,29 +199,92 @@ function onTouchEnd(e: TouchEvent) {
   scrollbar-width: none;  /* Firefox */
 }
 
-/* Custom P5 Slide Animation */
-.p5-slide-enter-active,
-.p5-slide-leave-active {
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+/* Direction-aware tab switch — no skew flip */
+.skills-slide-next-enter-active {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.p5-slide-enter-from {
-  opacity: 0;
-  transform: translateX(50px) skewX(-12deg);
+.skills-slide-next-leave-active {
+  transition: all 0.28s cubic-bezier(0.55, 0, 1, 0.45);
 }
 
-.p5-slide-leave-to {
+.skills-slide-next-enter-from {
   opacity: 0;
-  transform: translateX(-50px) skewX(12deg);
+  transform: translateX(40px);
+}
+
+.skills-slide-next-leave-to {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.skills-slide-prev-enter-active {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.skills-slide-prev-leave-active {
+  transition: all 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.skills-slide-prev-enter-from {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.skills-slide-prev-leave-to {
+  opacity: 0;
+  transform: translateX(40px);
 }
 
 @media (max-width: 767px) {
-  .p5-slide-enter-from {
-    transform: translateX(20px);
+  .skills-slide-next-enter-from {
+    transform: translateX(28px);
   }
 
-  .p5-slide-leave-to {
-    transform: translateX(-20px);
+  .skills-slide-next-leave-to {
+    transform: translateX(-28px);
+  }
+
+  .skills-slide-prev-enter-from {
+    transform: translateX(-28px);
+  }
+
+  .skills-slide-prev-leave-to {
+    transform: translateX(28px);
+  }
+}
+
+/* Skill card cascade reveal */
+@keyframes skills-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skills-reveal-item {
+  animation: skills-reveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+@media (max-width: 767px) {
+  @keyframes skills-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .skills-reveal-item {
+    animation-duration: 0.38s;
   }
 }
 
@@ -208,6 +299,19 @@ function onTouchEnd(e: TouchEvent) {
   }
   to {
     transform: rotate(360deg) skewX(12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-reveal-item {
+    animation: none;
+  }
+
+  .skills-slide-next-enter-active,
+  .skills-slide-next-leave-active,
+  .skills-slide-prev-enter-active,
+  .skills-slide-prev-leave-active {
+    transition-duration: 0.01ms !important;
   }
 }
 </style>

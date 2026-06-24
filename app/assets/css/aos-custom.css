@@ -1,0 +1,152 @@
+/* Persona 5 — enhanced AOS in/out transitions */
+
+[data-aos] {
+  transition-property: transform, opacity, filter;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Snappier exit when scrolling away (mirror mode) */
+[data-aos]:not(.aos-animate) {
+  transition-duration: 0.45s !important;
+  transition-timing-function: cubic-bezier(0.55, 0, 1, 0.45) !important;
+}
+
+[data-aos].aos-animate {
+  transition-duration: var(--aos-duration, 700ms);
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ── Custom P5 scroll animations ── */
+
+[data-aos='p5-slide-right'] {
+  transform: translate3d(-48px, 0, 0);
+  opacity: 0;
+}
+
+[data-aos='p5-slide-right'].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos='p5-slide-left'] {
+  transform: translate3d(48px, 0, 0);
+  opacity: 0;
+}
+
+[data-aos='p5-slide-left'].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+[data-aos='p5-rise'] {
+  transform: translate3d(0, 40px, 0) scale(0.96);
+  opacity: 0;
+}
+
+[data-aos='p5-rise'].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+[data-aos='p5-drop'] {
+  transform: translate3d(0, -32px, 0) scale(1.04);
+  opacity: 0;
+}
+
+[data-aos='p5-drop'].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+[data-aos='p5-zoom-in'] {
+  transform: scale(0.85);
+  opacity: 0;
+}
+
+[data-aos='p5-zoom-in'].aos-animate {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-aos='p5-zoom-out-up'] {
+  transform: translate3d(0, 24px, 0) scale(1.08);
+  opacity: 0;
+}
+
+[data-aos='p5-zoom-out-up'].aos-animate {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+[data-aos='p5-flip-in'] {
+  transform: perspective(600px) rotateX(70deg) translateY(12px);
+  opacity: 0;
+  transform-origin: center bottom;
+}
+
+[data-aos='p5-flip-in'].aos-animate {
+  transform: perspective(600px) rotateX(0deg) translateY(0);
+  opacity: 1;
+}
+
+[data-aos='p5-wipe-right'] {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+
+[data-aos='p5-wipe-right'].aos-animate {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+[data-aos='p5-slot-drop'] {
+  transform: translate3d(0, -28px, 0);
+  opacity: 0;
+}
+
+[data-aos='p5-slot-drop'].aos-animate {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Wipe needs clip-path in transition */
+[data-aos='p5-wipe-right'] {
+  transition-property: transform, opacity, clip-path, filter;
+}
+
+@media (max-width: 767px) {
+  /* clip-path wipe can feel janky on mobile — use rise instead */
+  [data-aos='p5-wipe-right'] {
+    clip-path: none;
+    transform: translate3d(0, 36px, 0);
+    opacity: 0;
+  }
+
+  [data-aos='p5-wipe-right'].aos-animate {
+    clip-path: none;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  [data-aos='p5-slot-drop'] {
+    transform: translate3d(0, -20px, 0);
+  }
+}
+
+/* Stagger children inside mirrored sections */
+[data-aos][data-aos-delay] {
+  transition-delay: 0s;
+}
+
+[data-aos].aos-animate[data-aos-delay] {
+  transition-delay: var(--aos-delay, 0ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

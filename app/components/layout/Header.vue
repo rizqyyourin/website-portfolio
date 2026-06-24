@@ -107,3 +107,60 @@ onMounted(() => {
 })
 </script>
 
+<style scoped>
+.p5-mobile-menu-enter-active {
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.p5-mobile-menu-leave-active {
+  transition: opacity 0.28s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+.p5-mobile-menu-enter-from,
+.p5-mobile-menu-leave-to {
+  opacity: 0;
+}
+
+.p5-mobile-menu-enter-active .flex-col a {
+  animation: p5-menu-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.p5-mobile-menu-leave-active .flex-col a {
+  animation: p5-menu-out 0.3s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+}
+
+.p5-mobile-menu-enter-active .flex-col a:nth-child(1) { animation-delay: 0.05s; }
+.p5-mobile-menu-enter-active .flex-col a:nth-child(2) { animation-delay: 0.1s; }
+.p5-mobile-menu-enter-active .flex-col a:nth-child(3) { animation-delay: 0.15s; }
+.p5-mobile-menu-enter-active .flex-col a:nth-child(4) { animation-delay: 0.2s; }
+.p5-mobile-menu-enter-active .flex-col a:nth-child(5) { animation-delay: 0.25s; }
+
+.p5-mobile-menu-leave-active .flex-col a:nth-child(1) { animation-delay: 0s; }
+.p5-mobile-menu-leave-active .flex-col a:nth-child(2) { animation-delay: 0.03s; }
+.p5-mobile-menu-leave-active .flex-col a:nth-child(3) { animation-delay: 0.06s; }
+.p5-mobile-menu-leave-active .flex-col a:nth-child(4) { animation-delay: 0.09s; }
+.p5-mobile-menu-leave-active .flex-col a:nth-child(5) { animation-delay: 0.12s; }
+
+@keyframes p5-menu-in {
+  from {
+    opacity: 0;
+    transform: translateX(32px) skewX(-12deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) skewX(-12deg);
+  }
+}
+
+@keyframes p5-menu-out {
+  from {
+    opacity: 1;
+    transform: translateX(0) skewX(-12deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-24px) skewX(12deg);
+  }
+}
+</style>
+

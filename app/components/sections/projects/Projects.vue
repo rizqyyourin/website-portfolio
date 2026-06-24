@@ -7,21 +7,21 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Header -->
-      <div data-aos="fade-right" data-aos-duration="600" class="mb-16 text-center md:text-left max-md:px-2">
+      <div data-aos="p5-slide-right" data-aos-duration="650" class="mb-16 text-center md:text-left max-md:px-2">
          <div class="inline-block transform -skew-x-12 max-md:skew-x-0 bg-white px-2 mb-2">
             <span class="text-black font-black text-sm tracking-widest uppercase transform skew-x-12 max-md:skew-x-0">Projects</span>
          </div>
-         <h2 data-aos="zoom-in" data-aos-delay="200" class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 max-md:skew-x-0 text-shadow-red max-md:text-shadow-none">
+         <h2 data-aos="p5-zoom-in" data-aos-delay="150" data-aos-duration="750" class="text-6xl md:text-8xl font-black text-white italic tracking-tighter uppercase transform -skew-x-6 max-md:skew-x-0 text-shadow-red max-md:text-shadow-none">
             MISSION LOG
          </h2>
-         <p data-aos="fade-up" data-aos-delay="400" class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 max-md:skew-x-0 border-l-4 border-red-600 pl-4 max-md:border-l-0 max-md:pl-0 inline-block bg-black/50 p-2">
+         <p data-aos="p5-rise" data-aos-delay="300" data-aos-duration="650" class="text-xl text-gray-300 font-bold font-mono mt-4 transform -skew-x-6 max-md:skew-x-0 border-l-4 border-red-600 pl-4 max-md:border-l-0 max-md:pl-0 inline-block bg-black/50 p-2">
             Showcase of projects and secure web applications.
          </p>
       </div>
 
       <div class="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar pb-12 pt-4 px-6 md:px-0 p5-mobile-safe">
         <template v-for="(project, index) in projects" :key="project.title">
-          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group block relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center perspective-1000 mx-1 md:mx-0 h-full">
+          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'p5-rise'" :data-aos-delay="80 + (index * 120)" :data-aos-duration="700" class="group block relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center perspective-1000 mx-1 md:mx-0 h-full">
              <!-- Card Wrapper -->
              <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1 max-md:px-1">
                 
@@ -72,7 +72,7 @@
           </a>
           
           <!-- Static Card (No Link) -->
-          <article v-else :data-aos="'zoom-in-up'" :data-aos-delay="100 + (index * 150)" class="group relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mx-1 md:mx-0 max-md:px-1">
+          <article v-else :data-aos="'p5-rise'" :data-aos-delay="80 + (index * 120)" :data-aos-duration="700" class="group relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mx-1 md:mx-0 max-md:px-1">
               <!-- Red Shadow Block -->
               <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 max-md:translate-x-1 max-md:translate-y-1 max-md:skew-x-0 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
               <!-- Main Card Content -->

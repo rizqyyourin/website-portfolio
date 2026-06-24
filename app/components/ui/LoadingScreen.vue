@@ -1,11 +1,11 @@
 <template>
   <Transition 
-    enter-active-class="transition-opacity duration-300 ease-out"
-    enter-from-class="opacity-0"
-    enter-to-class="opacity-100"
-    leave-active-class="transition-all duration-700 ease-in-out"
-    leave-from-class="opacity-100"
-    leave-to-class="opacity-0 -translate-y-full"
+    enter-active-class="transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+    enter-from-class="opacity-0 scale-[1.02]"
+    enter-to-class="opacity-100 scale-100"
+    leave-active-class="transition-all duration-[400ms] ease-[cubic-bezier(0.55,0,1,0.45)]"
+    leave-from-class="opacity-100 scale-100"
+    leave-to-class="opacity-0 -translate-y-8 scale-[0.98]"
   >
   <div 
     v-show="isLoading"

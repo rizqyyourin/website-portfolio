@@ -89,11 +89,16 @@ const activeSection = ref('home')
 const handleScroll = () => {
   const sections = navigation.map(item => item.href.substring(1))
 
+  // Must be below the fixed header (~104px) plus scroll-padding,
+  // otherwise anchored sections land just past the threshold and
+  // the previous section stays highlighted.
+  const threshold = 130
+
   for (const section of sections) {
     const element = document.getElementById(section)
     if (element) {
       const rect = element.getBoundingClientRect()
-      if (rect.top <= 100 && rect.bottom > 100) {
+      if (rect.top <= threshold && rect.bottom > threshold) {
         activeSection.value = section
         break
       }
@@ -102,6 +107,7 @@ const handleScroll = () => {
 }
 
 onMounted(() => {
+  handleScroll()
   window.addEventListener('scroll', handleScroll, { passive: true })
 })
 

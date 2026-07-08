@@ -1,4 +1,4 @@
-FROM node:20.20-bookworm-slim AS builder
+FROM node:22-bookworm-slim AS builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ ENV NUXT_PUBLIC_SITE_URL=${NUXT_PUBLIC_SITE_URL}
 
 RUN pnpm run build
 
-FROM node:20.20-bookworm-slim AS runner
+FROM node:22-bookworm-slim AS runner
 
 WORKDIR /app
 

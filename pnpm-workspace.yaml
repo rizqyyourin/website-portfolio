@@ -1,4 +1,5 @@
-# Dependency build scripts allowed to run during install (pnpm 10+)
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - esbuild
+# pnpm 11: dependency build scripts must be explicitly allowed via allowBuilds
+# (the older onlyBuiltDependencies list was removed in v11)
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true

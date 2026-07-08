@@ -29,7 +29,7 @@ export const techStacks = [
     {
         id: "tall",
         name: "TALL Stack",
-        title: "A Newbie <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500\">TALL</span> Stack",
+        title: "Battle-Ready <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500\">TALL</span> Stack",
         description: "A powerful combination in PHP ecosystem. This modern stack allows me to build responsive, interactive, and maintainable web applications with exceptional speed and efficiency.",
         items: [
             {
@@ -61,7 +61,7 @@ export const techStacks = [
     {
         id: "vilt",
         name: "VILT Stack",
-        title: "Monolith Specialize in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500\">VILT</span> Stack",
+        title: "Monolith Specialist in <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500\">VILT</span> Stack",
         description: "The VILT stack brings the power of Single Page Applications (SPA) with the simplicity of a classic monolith.",
         items: [
             {

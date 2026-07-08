@@ -39,6 +39,9 @@
           <!-- Mobile Menu Button -->
           <button 
             @click="isMobileMenuOpen = !isMobileMenuOpen"
+            aria-label="Open navigation menu"
+            :aria-expanded="isMobileMenuOpen"
+            aria-controls="mobile-menu"
             class="md:hidden p-2 transform -skew-x-12 bg-red-600 text-white border-2 border-white shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] hover:bg-white hover:text-red-600"
           >
             <div class="transform skew-x-12">
@@ -53,11 +56,12 @@
     <transition name="p5-mobile-menu">
       <div 
         v-if="isMobileMenuOpen"
+        id="mobile-menu"
         class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center space-y-8"
         @click.self="isMobileMenuOpen = false"
       >
         <!-- Close Button -->
-        <button class="absolute top-8 right-8 text-white text-4xl font-black hover:text-red-600 hover:rotate-90 transition-transform" @click="isMobileMenuOpen = false">×</button>
+        <button aria-label="Close navigation menu" class="absolute top-8 right-8 text-white text-4xl font-black hover:text-red-600 hover:rotate-90 transition-transform" @click="isMobileMenuOpen = false">×</button>
 
         <div class="flex flex-col space-y-6 w-full max-w-xs">
           <a v-for="(item, index) in navigation"
@@ -82,28 +86,27 @@ import { navigation } from '~/data/content'
 const isMobileMenuOpen = ref(false)
 const activeSection = ref('home')
 
-onMounted(() => {
-  const handleScroll = () => {
-    // Extract section IDs from navigation
-    const sections = navigation.map(item => item.href.substring(1))
-    
-    for (const section of sections) {
-      const element = document.getElementById(section)
-      if (element) {
-        const rect = element.getBoundingClientRect()
-        if (rect.top <= 100 && rect.bottom > 100) {
-          activeSection.value = section
-          break
-        }
+const handleScroll = () => {
+  const sections = navigation.map(item => item.href.substring(1))
+
+  for (const section of sections) {
+    const element = document.getElementById(section)
+    if (element) {
+      const rect = element.getBoundingClientRect()
+      if (rect.top <= 100 && rect.bottom > 100) {
+        activeSection.value = section
+        break
       }
     }
   }
-  
-  window.addEventListener('scroll', handleScroll)
-  
-  return () => {
-    window.removeEventListener('scroll', handleScroll)
-  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 

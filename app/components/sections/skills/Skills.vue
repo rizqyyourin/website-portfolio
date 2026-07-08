@@ -102,7 +102,7 @@
 
                     <div class="flex flex-col items-center text-center relative z-10">
                       <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 border-4 border-black group-hover:border-white transition-colors">
-                        <img :src="skill.icon" :alt="skill.name" class="w-12 h-12 object-contain" />
+                        <img :src="skill.icon" :alt="skill.name" loading="lazy" class="w-12 h-12 object-contain" />
                       </div>
                       <h4 class="text-2xl font-black text-white italic uppercase tracking-wider mb-1 bg-black px-2 transform -skew-x-6 max-md:skew-x-0 group-hover:bg-white group-hover:text-red-600 transition-colors">
                         {{ skill.name }}
@@ -116,15 +116,22 @@
              </div>
            </transition>
 
+           <!-- Swipe Hint (mobile only, until first interaction) -->
+           <p v-if="!hasInteracted" class="lg:hidden text-center text-xs font-mono text-white/50 mt-8 relative z-20 animate-pulse">
+             &laquo; swipe to switch &raquo;
+           </p>
+
            <!-- Swipe Indicator Dots (mobile only) -->
-           <div class="flex lg:hidden justify-center gap-2 mt-8 relative z-20">
+           <div class="flex lg:hidden justify-center gap-2 relative z-20" :class="hasInteracted ? 'mt-8' : 'mt-2'" role="tablist" aria-label="Skill categories">
              <button
                v-for="tab in tabs"
                :key="tab"
+               role="tab"
+               :aria-selected="activeSkillsTab === tab"
+               :aria-label="tab"
                @click="selectTab(tab)"
                class="w-2 h-2 rounded-full transition-all duration-300"
                :class="activeSkillsTab === tab ? 'bg-red-600 w-6' : 'bg-white/30'"
-               aria-label="Select tab"
              ></button>
            </div>
         </div>
@@ -140,6 +147,7 @@ import { skills } from '~/data/content'
 
 const activeSkillsTab = ref('languages')
 const slideDirection = ref<'next' | 'prev'>('next')
+const hasInteracted = ref(false)
 
 const tabs = computed(() => Object.keys(skills))
 
@@ -154,6 +162,7 @@ const slideTransition = computed(() =>
 )
 
 function selectTab(tab: string) {
+  hasInteracted.value = true
   if (tab === activeSkillsTab.value) return
 
   const newIndex = tabs.value.indexOf(tab)
@@ -189,16 +198,6 @@ function onTouchEnd(e: TouchEvent) {
 </script>
 
 <style scoped>
-/* Hide scrollbar for Chrome, Safari and Opera */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-/* Hide scrollbar for IE, Edge and Firefox */
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
 /* Direction-aware tab switch — no skew flip */
 .skills-slide-next-enter-active {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);

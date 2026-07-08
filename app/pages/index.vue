@@ -15,7 +15,9 @@ import TechStack from '~/components/sections/tech-stack/TechStack.vue'
 import Projects from '~/components/sections/projects/Projects.vue'
 import Skills from '~/components/sections/skills/Skills.vue'
 import Contact from '~/components/sections/contact/Contact.vue'
-import { projects } from '~/data/content'
+import { navigation, projects } from '~/data/content'
+
+const siteUrl = useRuntimeConfig().public.siteUrl
 
 // Structured data for projects using dynamic data
 const projectsSchema = {
@@ -33,30 +35,16 @@ const projectsSchema = {
   }))
 }
 
-// Breadcrumb schema
+// Breadcrumb schema built from navigation data
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      position: 1,
-      name: 'Home',
-      item: 'https://yourin.my.id'
-    },
-    {
-      '@type': 'ListItem',
-      position: 2,
-      name: 'Tech Stack',
-      item: 'https://yourin.my.id#tech-stack'
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: 'Projects',
-      item: 'https://yourin.my.id#projects'
-    }
-  ]
+  itemListElement: navigation.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.href === '#home' ? siteUrl : `${siteUrl}/${item.href}`
+  }))
 }
 
 useHead({

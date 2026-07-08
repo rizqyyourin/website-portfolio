@@ -57,6 +57,15 @@ useHead({
 })
 
 onMounted(() => {
+  // Returning visitor in the same session: skip the loading theater
+  if (sessionStorage.getItem('p5-visited')) {
+    progress.value = 100
+    isLoading.value = false
+    nextTick(() => $refreshAos?.())
+    return
+  }
+  sessionStorage.setItem('p5-visited', '1')
+
   // Continue from where SSR left off (SSR bar animates to 70%)
   progress.value = 70
   isLoading.value = true
@@ -80,20 +89,20 @@ onMounted(() => {
     setTimeout(() => {
       isLoading.value = false
       nextTick(() => $refreshAos?.())
-    }, 500)
+    }, 400)
   }
 
   // Handle page load
   const handleLoad = () => {
-    setTimeout(finish, 400)
+    setTimeout(finish, 200)
   }
 
   if (document.readyState === 'complete') {
     handleLoad()
   } else {
     window.addEventListener('load', handleLoad, { once: true })
-    // Fallback max 3 seconds
-    setTimeout(finish, 3000)
+    // Fallback max 1.5 seconds
+    setTimeout(finish, 1500)
   }
 })
 </script>

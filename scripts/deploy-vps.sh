@@ -33,10 +33,10 @@ git pull --ff-only origin "$BRANCH"
 
 export NUXT_PUBLIC_SITE_URL
 
-echo "[$(date -Iseconds)] Running npm ci"
-npm ci
-echo "[$(date -Iseconds)] Running npm run build"
-NODE_ENV=production npm run build
+echo "[$(date -Iseconds)] Running pnpm install"
+pnpm install --frozen-lockfile
+echo "[$(date -Iseconds)] Running pnpm run build"
+NODE_ENV=production pnpm run build
 
 echo "[$(date -Iseconds)] Reloading PM2 app '$PM2_APP_NAME'"
 if pm2 describe "$PM2_APP_NAME" >/dev/null 2>&1; then

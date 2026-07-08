@@ -43,9 +43,7 @@
       <div class="border-t border-dark-700 pt-8 flex flex-col md:flex-row justify-between items-center">
         <p class="text-gray-400 text-sm">© {{ new Date().getFullYear() }} Yourin Portfolio</p>
         <div class="flex gap-6 mt-4 md:mt-0 text-gray-400">
-          <a href="#" class="hover:text-primary-500 transition-colors">Privacy</a>
-          <a href="#" class="hover:text-primary-500 transition-colors">Terms</a>
-          <a href="#" class="hover:text-primary-500 transition-colors">Sitemap</a>
+          <a href="/sitemap.xml" class="hover:text-primary-500 transition-colors">Sitemap</a>
         </div>
       </div>
     </div>

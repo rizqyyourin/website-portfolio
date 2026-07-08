@@ -1,13 +1,6 @@
 module.exports = {
   content: [
-    './components/**/*.{js,vue,ts}',
-    './layouts/**/*.vue',
-    './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './app.vue',
-    './error.vue',
-    './app/**/*.{js,vue,ts}', // Include new app directory
-    'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,vue,ts}',
   ],
   darkMode: 'class',
   theme: {
@@ -20,18 +13,6 @@ module.exports = {
           300: '#fca5a5',
           400: '#f87171',
           500: '#ef4444',  // Laravel Red
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-        },
-        laravel: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',  // Main Laravel Red
           600: '#dc2626',
           700: '#b91c1c',
           800: '#991b1b',
@@ -61,6 +42,7 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in',
         'slide-up': 'slideUp 0.5s ease-out',
         'bounce-slow': 'bounce 3s infinite',
+        wiggle: 'wiggle 1.2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -71,8 +53,12 @@ module.exports = {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'skewX(-12deg) rotate(-2deg)' },
+          '50%': { transform: 'skewX(-12deg) rotate(2deg)' },
+        },
       }
     },
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [],
 }

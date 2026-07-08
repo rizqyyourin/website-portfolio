@@ -1,3 +1,5 @@
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://yourin.my.id'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-18',
@@ -9,8 +11,11 @@ export default defineNuxtConfig({
   // SSR - enabled for generic hosting
   ssr: true,
 
-  // Generate static site with index.html
-
+  runtimeConfig: {
+    public: {
+      siteUrl,
+    },
+  },
 
   // Modules
   modules: ['@nuxtjs/tailwindcss'],
@@ -71,11 +76,19 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:url',
-          content: 'https://yourin.my.id'
+          content: siteUrl
+        },
+        {
+          property: 'og:image',
+          content: `${siteUrl}/images/profile.jpg`
         },
         {
           name: 'twitter:card',
           content: 'summary_large_image'
+        },
+        {
+          name: 'twitter:image',
+          content: `${siteUrl}/images/profile.jpg`
         },
         {
           name: 'twitter:creator',
@@ -99,7 +112,7 @@ export default defineNuxtConfig({
           type: 'image/svg+xml',
           href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23ef4444" width="100" height="100"/><text x="50" y="65" font-size="60" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial">Y</text></svg>'
         },
-        { rel: 'canonical', href: 'https://yourin.my.id' },
+        { rel: 'canonical', href: siteUrl },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' }
       ],
       htmlAttrs: {
@@ -112,10 +125,10 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Person',
             name: 'Ahmad Rizqy Yourin',
-            url: 'https://yourin.my.id',
-            email: 'contact@yourin.my.id',
+            url: siteUrl,
+            email: 'rizqyyourin6@gmail.com',
             jobTitle: 'Laravel Developer',
-            image: 'https://yourin.my.id/images/profile.png',
+            image: `${siteUrl}/images/profile.jpg`,
             sameAs: [
               'https://www.upwork.com/freelancers/~01103c6049d69f345f',
               'https://github.com/rizqyyourin'
@@ -141,11 +154,6 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
     renderJsonPayloads: false
-  },
-
-  // Build configuration
-  build: {
-    transpile: ['flowbite']
   },
 
   // Vite configuration

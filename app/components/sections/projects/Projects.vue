@@ -34,7 +34,7 @@
                    <!-- Image Section with Cutout Effect -->
                    <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
                       <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
+                      <img v-if="project.image" :src="project.image" :alt="project.title" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
                       <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
                          <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
                       </div>
@@ -80,7 +80,7 @@
                    <!-- Image Section -->
                    <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
                       <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
+                      <img v-if="project.image" :src="project.image" :alt="project.title" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
                       <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
                          <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
                       </div>

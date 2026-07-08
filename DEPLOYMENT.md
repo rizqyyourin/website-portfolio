@@ -5,7 +5,7 @@ This repository deploys to the production VPS through GitHub Actions.
 ## Flow
 
 1. Push to `main`.
-2. GitHub Actions runs `npm ci` and `npm run build`.
+2. GitHub Actions runs `pnpm install --frozen-lockfile` and `pnpm run build`.
 3. If the build passes, GitHub Actions connects to the VPS over SSH.
 4. The VPS runs `scripts/deploy-vps.sh`.
 5. The script pulls the latest `main`, rebuilds the app, and reloads PM2.

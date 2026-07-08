@@ -15,7 +15,7 @@
           data-aos="p5-drop"
           data-aos-delay="150"
           data-aos-duration="600"
-          class="text-white text-xl font-bold italic tracking-wider mt-2 bg-red-600 text-black px-2 inline-block transform skew-x-12 max-md:skew-x-0"
+          class="text-xl font-bold italic tracking-wider mt-2 bg-white text-black px-2 inline-block transform skew-x-12 max-md:skew-x-0"
         >
           CHOOSE YOUR WEAPON
         </div>
@@ -111,7 +111,7 @@
 
                   <div class="relative z-10 flex flex-col items-center justify-center h-full space-y-2">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center sm:group-hover:animate-bounce">
-                      <img :src="item.logo" :alt="item.name" class="w-full h-full object-contain filter drop-shadow-md" />
+                      <img :src="item.logo" :alt="item.name" loading="lazy" class="w-full h-full object-contain filter drop-shadow-md" />
                     </div>
                     <span class="font-black text-black text-xs sm:text-sm uppercase bg-white px-1 text-center leading-tight">
                       {{ item.name }}
@@ -121,6 +121,11 @@
               </div>
             </div>
            </transition>
+
+           <!-- Swipe Hint (mobile only, until first interaction) -->
+           <p v-if="!hasInteracted" class="md:hidden text-center text-xs font-mono text-white/50 mt-4 animate-pulse">
+             &laquo; swipe to switch &raquo;
+           </p>
 
            <!-- Swipe Indicator Dots (mobile only) -->
            <div class="flex md:hidden justify-center gap-2 mt-4" role="tablist" aria-label="Tech stacks">
@@ -148,6 +153,7 @@ import { techStacks } from '~/data/content'
 const selectedStackId = ref('tall')
 const slideDirection = ref<'next' | 'prev'>('next')
 const isMobile = ref(false)
+const hasInteracted = ref(false)
 
 const selectedStack = computed(() => {
   return techStacks.find(s => s.id === selectedStackId.value) || techStacks[0]!
@@ -160,6 +166,7 @@ const slideTransition = computed(() =>
 )
 
 function selectStack(id: string) {
+  hasInteracted.value = true
   if (id === selectedStackId.value) return
 
   const newIndex = techStacks.findIndex(s => s.id === id)

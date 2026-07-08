@@ -4,6 +4,11 @@
 
 /* Persona 5 Global Styles */
 @layer base {
+  html {
+    /* Keep anchored sections clear of the fixed header */
+    scroll-padding-top: 6.5rem;
+  }
+
   body {
     @apply bg-zinc-900 text-white overflow-x-hidden;
     font-family: 'Inter', sans-serif;
@@ -30,7 +35,7 @@
   }
 
   .p5-box {
-    @apply bg-black border-2 border-white p4 shadow-[8px_8px_0px_0px_rgba(220, 38, 38, 1)];
+    @apply bg-black border-2 border-white p-4 shadow-[8px_8px_0px_0px_rgba(220,38,38,1)];
   }
 
   .p5-text {

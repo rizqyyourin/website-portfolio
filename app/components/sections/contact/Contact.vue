@@ -32,8 +32,8 @@
                      <span data-aos="zoom-in" data-aos-delay="700" data-aos-duration="300" class="inline-block bg-red-600 text-black px-3 py-1 transform skew-x-6 -rotate-1 translate-y-1 scale-110 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">SITE</span>
                   </div>
                   
-                  <h2 data-aos="p5-zoom-in" data-aos-delay="600" data-aos-duration="750" class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter transform -skew-x-6 relative inline-block mt-4 w-full">
-                     <span class="absolute inset-0 text-red-600 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 -z-10 mix-blend-darken">LET'S STEAL THE SHOW</span>
+                  <h2 data-aos="p5-zoom-in" data-aos-delay="600" data-aos-duration="750" class="text-4xl md:text-7xl font-black text-black uppercase tracking-tighter transform -skew-x-6 relative inline-block mt-4 w-full max-md:[text-shadow:2px_2px_0_#dc2626]">
+                     <span class="absolute inset-0 text-red-600 translate-x-2 translate-y-2 -z-10 mix-blend-darken max-md:hidden" aria-hidden="true">LET'S STEAL THE SHOW</span>
                      <span class="relative">LET'S STEAL THE SHOW</span>
                   </h2>
                   
@@ -54,33 +54,33 @@
 
                   <!-- WhatsApp -->
                   <a :href="personalInfo.socials.whatsapp" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-green-500 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
-                        <span class="text-black font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">WHATSAPP</span>
+                     <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">WHATSAPP</span>
                      </div>
                   </a>
 
                   <!-- LinkedIn -->
                   <a :href="personalInfo.socials.linkedin" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-blue-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
-                        <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">LINKEDIN</span>
+                     <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">LINKEDIN</span>
                      </div>
                   </a>
                   
                   <!-- GitHub -->
                   <a :href="personalInfo.socials.github" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-gray-800 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
-                        <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">GITHUB</span>
+                     <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">GITHUB</span>
                      </div>
                   </a>
 
                   <!-- Instagram -->
                   <a :href="personalInfo.socials.instagram" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
-                     <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-pink-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
-                        <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">INSTAGRAM</span>
+                     <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">INSTAGRAM</span>
                      </div>
                   </a>
                </div>

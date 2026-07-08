@@ -11,13 +11,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.2.0",
     "@nuxtjs/tailwindcss": "^6.10.0",
     "aos": "^2.3.4",
-    "emailjs-com": "^3.2.0",
-    "framer-motion": "^10.16.0",
     "nuxt": "^4.3.0",
     "vue": "^3.3.0"
   },
@@ -25,9 +21,7 @@
     "@nuxt/devtools": "^1.0.0",
     "@types/aos": "^3.0.7",
     "autoprefixer": "^10.4.0",
-    "flowbite": "^4.0.1",
     "postcss": "^8.4.0",
-    "shadcn-vue": "^2.3.3",
     "tailwindcss": "^3.3.0"
   }
 }

@@ -7,8 +7,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     AOS.init({
       duration: 700,
       easing: 'ease-out-cubic',
-      once: false,
-      mirror: true,
+      once: true,
+      mirror: false,
       offset: 80,
       anchorPlacement: 'top-bottom',
       debounceDelay: 40,

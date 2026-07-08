@@ -2,15 +2,17 @@ FROM node:20.20-bookworm-slim AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm ci
+RUN corepack enable
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
 ARG NUXT_PUBLIC_SITE_URL=https://yourin.my.id
 ENV NUXT_PUBLIC_SITE_URL=${NUXT_PUBLIC_SITE_URL}
 
-RUN npm run build
+RUN pnpm run build
 
 FROM node:20.20-bookworm-slim AS runner
 

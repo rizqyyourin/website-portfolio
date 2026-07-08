@@ -1,0 +1,4 @@
+# Dependency build scripts allowed to run during install (pnpm 10+)
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild

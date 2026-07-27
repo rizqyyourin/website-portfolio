@@ -52,5 +52,6 @@ yarn-error.log*
 .git
 # Build output
 docs/
+!docs/specification.md
 
 # Deployment config

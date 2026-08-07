@@ -20,84 +20,12 @@
       </div>
 
       <div class="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar pb-12 pt-4 px-6 md:px-0 p5-mobile-safe">
-        <template v-for="(project, index) in projects" :key="project.title">
-          <a v-if="project.link && project.link !== '#'" :href="project.link" target="_blank" rel="noopener noreferrer" :data-aos="'p5-rise'" :data-aos-delay="80 + (index * 120)" :data-aos-duration="700" class="group block relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center perspective-1000 mx-1 md:mx-0 h-full">
-             <!-- Card Wrapper -->
-             <article class="relative h-full transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-1 max-md:px-1">
-                
-                <!-- Red Shadow Block -->
-                <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 max-md:translate-x-1 max-md:translate-y-1 max-md:skew-x-0 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
-                
-                <!-- Main Card Content -->
-                <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 max-md:skew-x-0 overflow-hidden group-hover:border-red-400 transition-colors">
-                   
-                   <!-- Image Section with Cutout Effect -->
-                   <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
-                      <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <img v-if="project.image" :src="project.image" :alt="project.title" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
-                      <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
-                         <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
-                      </div>
-                     
-                   </div>
-
-                   <!-- Content Section -->
-                   <div class="p-6 flex flex-col flex-grow relative">
-                      <!-- Title -->
-                      <h3 class="text-2xl font-black text-white italic uppercase mb-2 group-hover:text-red-500 transition-colors relative z-10">
-                         {{ project.title }}
-                      </h3>
-                      
-                      <!-- Description -->
-                      <p class="text-sm text-gray-400 font-medium mb-4 flex-grow font-mono leading-relaxed relative z-10">
-                         {{ project.description }}
-                      </p>
-                      
-                      <!-- Tags -->
-                      <div class="flex flex-wrap gap-2 relative z-10">
-                         <span v-for="tag in project.tags" :key="tag" class="inline-block px-2 py-1 text-xs font-bold bg-white text-black transform -skew-x-12 border border-black hover:bg-red-600 hover:text-white transition-colors">
-                            <span class="inline-block transform skew-x-12">#{{ tag }}</span>
-                         </span>
-                      </div>
-
-                      <!-- Hover "Take Your Heart" Badge -->
-                      <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 transform rotate-12">
-                         <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center border-2 border-white shadow-lg animate-pulse">
-                            <span class="text-white font-black text-[10px] text-center leading-tight">TAKE<br>YOUR<br>HEART</span>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </article>
-          </a>
-          
-          <!-- Static Card (No Link) -->
-          <article v-else :data-aos="'p5-rise'" :data-aos-delay="80 + (index * 120)" :data-aos-duration="700" class="group relative shrink-0 w-[76vw] max-w-[300px] md:max-w-none md:w-auto snap-center h-full transform transition-transform duration-500 hover:-translate-y-2 hover:rotate-1 mx-1 md:mx-0 max-md:px-1">
-              <!-- Red Shadow Block -->
-              <div class="absolute inset-0 bg-red-600 transform translate-x-3 translate-y-3 -skew-x-3 max-md:translate-x-1 max-md:translate-y-1 max-md:skew-x-0 transition-transform group-hover:translate-x-5 group-hover:translate-y-5"></div>
-              <!-- Main Card Content -->
-              <div class="relative h-full bg-zinc-900 border-2 border-white flex flex-col transform -skew-x-3 max-md:skew-x-0 overflow-hidden group-hover:border-red-400 transition-colors">
-                   <!-- Image Section -->
-                   <div class="relative h-56 bg-zinc-800 overflow-hidden border-b-2 border-white group-hover:border-red-400 transition-colors">
-                      <div class="absolute inset-0 bg-red-600/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <img v-if="project.image" :src="project.image" :alt="project.title" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110" />
-                      <div v-else class="w-full h-full flex items-center justify-center bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')]">
-                         <span class="text-zinc-700 font-black text-4xl opacity-50">NO SIGNAL</span>
-                      </div>
-                   </div>
-                   <!-- Content Section -->
-                   <div class="p-6 flex flex-col flex-grow relative">
-                      <h3 class="text-2xl font-black text-white italic uppercase mb-2 group-hover:text-red-500 transition-colors relative z-10">{{ project.title }}</h3>
-                      <p class="text-sm text-gray-400 font-medium mb-4 flex-grow font-mono leading-relaxed relative z-10">{{ project.description }}</p>
-                      <div class="flex flex-wrap gap-2 relative z-10">
-                         <span v-for="tag in project.tags" :key="tag" class="inline-block px-2 py-1 text-xs font-bold bg-white text-black transform -skew-x-12 border border-black hover:bg-red-600 hover:text-white transition-colors">
-                            <span class="inline-block transform skew-x-12">#{{ tag }}</span>
-                         </span>
-                      </div>
-                   </div>
-              </div>
-          </article>
-        </template>
+        <ProjectCard
+          v-for="(project, index) in projects"
+          :key="project.title"
+          :project="project"
+          :index="index"
+        />
       </div>
     </div>
   </section>
@@ -105,6 +33,7 @@
 
 <script setup lang="ts">
 import { projects } from '~/data/content'
+import ProjectCard from './ProjectCard.vue'
 </script>
 
 <style scoped>

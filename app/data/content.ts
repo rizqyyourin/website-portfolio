@@ -52,7 +52,7 @@ export const techStacks = [
             },
             {
                 name: "Livewire",
-                logo: "https://logo.svgcdn.com/devicon/livewire-original-wordmark.png",
+                logo: "https://avatars.githubusercontent.com/u/51960834?v=4",
                 borderColor: "border-purple-200 dark:border-purple-700",
                 bgGradient: "from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30"
             }
@@ -122,50 +122,306 @@ export const projects = [
     {
         title: "ERP Minimal",
         description: "Lightweight enterprise resource planning system with inventory management, sales tracking, and financial reporting for small businesses.",
-        image: "/images/erp.png",
+        image: "/images/erp/1.png",
+        images: [
+            "/images/erp/1.png",
+            "/images/erp/2.png",
+            "/images/erp/3.png",
+            "/images/erp/4.png"
+        ],
         link: "https://erp.yourin.my.id/",
         tags: ["Laravel", "Livewire", "PostgreSQL"]
     },
     {
         title: "QPay - QR Payment System",
         description: "A QR code-based payment system for seamless transactions, allowing users to pay using their smartphones by scanning QR codes at checkout.",
-        image: "/images/qpay.png",
+        image: "/images/qpay/1.png",
+        images: [
+            "/images/qpay/1.png",
+            "/images/qpay/2.png",
+            "/images/qpay/3.png",
+            "/images/qpay/4.png",
+            "/images/qpay/5.png"
+        ],
         link: "https://qpay.yourin.my.id",
         tags: ["Laravel", "Vue", "PostgreSQL"]
     },
     {
         title: "Ticketin",
         description: "Customer experience CRM SaaS that helps companies handle customer complaints through service requests and email-based support channels.",
-        image: "/images/ticketin.png",
+        image: "/images/ticketin/1.png",
+        images: [
+            "/images/ticketin/1.png",
+            "/images/ticketin/2.png",
+            "/images/ticketin/3.png",
+            "/images/ticketin/4.png",
+            "/images/ticketin/5.png",
+            "/images/ticketin/6.png"
+        ],
         link: "https://ticketin.yourin.my.id",
         tags: ["Next.js", "Prisma", "PostgreSQL"]
     }
 ]
 
-export const skills = {
-    languages: [
-        { name: "PHP", description: "Server-side Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png" },
-        { name: "JavaScript", description: "Interactive Frontend", icon: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" },
-        { name: "Go", description: "High Performance", icon: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_LightBlue.png" },
-        { name: "Python", description: "Data Science & Scripting", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/500px-Python-logo-notext.svg.png" }
-    ],
-    databases: [
-        { name: "SQLite", description: "Lightweight Database", icon: "https://icon.icepanel.io/Technology/svg/SQLite.svg" },
-        { name: "MySQL", description: "Relational Database", icon: "https://www.mysql.com/common/logos/logo-mysql-170x115.png" },
-        { name: "PostgreSQL", description: "Advanced SQL", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/500px-Postgresql_elephant.svg.png" },
-        { name: "Redis", description: "In-Memory Cache", icon: "https://logowik.com/content/uploads/images/redis.jpg" }
-    ],
-    devops: [
-        { name: "Docker", description: "Containerization", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png" },
-        { name: "CI/CD", description: "Automated Pipelines", icon: "https://cdn-icons-png.flaticon.com/512/1005/1005141.png" }, // Generic CI/CD icon
-        { name: "Git", description: "Version Control", icon: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" }
-    ],
-    others: [
-        { name: "REST API", description: "Architectural Style", icon: "https://www.shutterstock.com/image-vector/api-application-interface-icon-simple-600nw-2188533787.jpg" },
-        { name: "WebSocket", description: "Real-time Protocol", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT0GotAGXrAE49WpZlOvndF5w99JWfOEo00Q&s" },
-        { name: "Postman", description: "API Development", icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
-        { name: "Mockoon", description: "API Mocking", icon: "https://mockoon.com/images/logo.svg" },
-        { name: "Swagger", description: "API Toolkit", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GlozyrEsA25S68xqsWEgejZkSQPi2L7SBw&s" },
-        { name: "AsyncAPI", description: "Event-Driven Spec", icon: "https://avatars.githubusercontent.com/u/16401334?s=280&v=4" }
-    ]
+export interface SkillNode {
+    id: string
+    name: string
+    description: string
+    icon: string
+    category: 'languages' | 'databases' | 'devops' | 'apis'
+    rank: 'RANK MAX' | 'RANK S' | 'RANK A+' | 'RANK A'
+    mastery: number
+    tier: number
+    prereqIds: string[]
+    tags: string[]
 }
+
+export interface SkillConnection {
+    from: string
+    to: string
+}
+
+export const skillTreeNodes: SkillNode[] = [
+    // LANGUAGES BRANCH
+    {
+        id: 'javascript',
+        name: 'JavaScript',
+        description: 'Interactive Frontend & Modern Web Ecosystem',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
+        category: 'languages',
+        rank: 'RANK MAX',
+        mastery: 95,
+        tier: 0,
+        prereqIds: [],
+        tags: ['Frontend', 'ES6+', 'Async']
+    },
+    {
+        id: 'php',
+        name: 'PHP',
+        description: 'Server-side Scripting & Web Backend',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png',
+        category: 'languages',
+        rank: 'RANK S',
+        mastery: 90,
+        tier: 1,
+        prereqIds: ['javascript'],
+        tags: ['Backend', 'OOP', 'Laravel']
+    },
+    {
+        id: 'python',
+        name: 'Python',
+        description: 'Scripting, Automation & Data Processing',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/500px-Python-logo-notext.svg.png',
+        category: 'languages',
+        rank: 'RANK S',
+        mastery: 88,
+        tier: 1,
+        prereqIds: ['javascript'],
+        tags: ['Automation', 'Data', 'Scripting']
+    },
+    {
+        id: 'go',
+        name: 'Go',
+        description: 'High Performance & Concurrency Microservices',
+        icon: 'https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_LightBlue.png',
+        category: 'languages',
+        rank: 'RANK S',
+        mastery: 86,
+        tier: 2,
+        prereqIds: ['python'],
+        tags: ['Concurrency', 'Backend', 'High Perf']
+    },
+
+    // DATABASES BRANCH
+    {
+        id: 'sqlite',
+        name: 'SQLite',
+        description: 'Lightweight Embedded Relational Database',
+        icon: 'https://icon.icepanel.io/Technology/svg/SQLite.svg',
+        category: 'databases',
+        rank: 'RANK A+',
+        mastery: 85,
+        tier: 0,
+        prereqIds: [],
+        tags: ['Storage', 'SQL', 'Embedded']
+    },
+    {
+        id: 'mysql',
+        name: 'MySQL',
+        description: 'Relational Database Management System',
+        icon: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png',
+        category: 'databases',
+        rank: 'RANK S',
+        mastery: 90,
+        tier: 1,
+        prereqIds: ['sqlite'],
+        tags: ['Relational', 'RDBMS', 'Indexing']
+    },
+    {
+        id: 'postgresql',
+        name: 'PostgreSQL',
+        description: 'Advanced Enterprise Open-Source SQL Database',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/500px-Postgresql_elephant.svg.png',
+        category: 'databases',
+        rank: 'RANK S',
+        mastery: 89,
+        tier: 1,
+        prereqIds: ['sqlite'],
+        tags: ['Enterprise SQL', 'JSONB', 'ACID']
+    },
+    {
+        id: 'redis',
+        name: 'Redis',
+        description: 'In-Memory Data Structure Store & Cache',
+        icon: 'https://logowik.com/content/uploads/images/redis.jpg',
+        category: 'databases',
+        rank: 'RANK S',
+        mastery: 88,
+        tier: 2,
+        prereqIds: ['postgresql'],
+        tags: ['Caching', 'In-Memory', 'Pub/Sub']
+    },
+
+    // DEVOPS BRANCH
+    {
+        id: 'git',
+        name: 'Git',
+        description: 'Distributed Version Control & Workflows',
+        icon: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png',
+        category: 'devops',
+        rank: 'RANK MAX',
+        mastery: 92,
+        tier: 0,
+        prereqIds: [],
+        tags: ['VCS', 'CLI', 'Branching']
+    },
+    {
+        id: 'docker',
+        name: 'Docker',
+        description: 'Containerization & Environment Isolation',
+        icon: 'https://cdn-icons-png.flaticon.com/512/919/919853.png',
+        category: 'devops',
+        rank: 'RANK S',
+        mastery: 89,
+        tier: 1,
+        prereqIds: ['git'],
+        tags: ['Containers', 'DevOps', 'Isolation']
+    },
+    {
+        id: 'cicd',
+        name: 'CI/CD',
+        description: 'Automated Build, Test & Deployment Pipelines',
+        icon: 'https://cdn-icons-png.flaticon.com/512/1005/1005141.png',
+        category: 'devops',
+        rank: 'RANK A+',
+        mastery: 85,
+        tier: 1,
+        prereqIds: ['git'],
+        tags: ['Pipelines', 'Automation', 'Actions']
+    },
+
+    // OTHERS / APIS BRANCH
+    {
+        id: 'restapi',
+        name: 'REST API',
+        description: 'Architectural Style for Web Services',
+        icon: 'https://www.shutterstock.com/image-vector/api-application-interface-icon-simple-600nw-2188533787.jpg',
+        category: 'apis',
+        rank: 'RANK MAX',
+        mastery: 96,
+        tier: 0,
+        prereqIds: [],
+        tags: ['HTTP', 'JSON', 'Architecture']
+    },
+    {
+        id: 'websocket',
+        name: 'WebSocket',
+        description: 'Real-time Full-Duplex Communication Protocol',
+        icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT0GotAGXrAE49WpZlOvndF5w99JWfOEo00Q&s',
+        category: 'apis',
+        rank: 'RANK S',
+        mastery: 87,
+        tier: 1,
+        prereqIds: ['restapi'],
+        tags: ['Real-time', 'Sockets', 'Bi-directional']
+    },
+    {
+        id: 'postman',
+        name: 'Postman',
+        description: 'API Testing & Workspace Collaboration',
+        icon: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg',
+        category: 'apis',
+        rank: 'RANK S',
+        mastery: 92,
+        tier: 1,
+        prereqIds: ['restapi'],
+        tags: ['API Testing', 'Collections', 'Mocking']
+    },
+    {
+        id: 'swagger',
+        name: 'Swagger',
+        description: 'OpenAPI Specification & Interactive Docs',
+        icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9GlozyrEsA25S68xqsWEgejZkSQPi2L7SBw&s',
+        category: 'apis',
+        rank: 'RANK A+',
+        mastery: 86,
+        tier: 1,
+        prereqIds: ['restapi'],
+        tags: ['OpenAPI', 'Documentation', 'Specs']
+    },
+    {
+        id: 'asyncapi',
+        name: 'AsyncAPI',
+        description: 'Event-Driven API Specification Standard',
+        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
+        category: 'apis',
+        rank: 'RANK A',
+        mastery: 82,
+        tier: 2,
+        prereqIds: ['websocket'],
+        tags: ['Event-Driven', 'Spec', 'EDA']
+    },
+    {
+        id: 'mockoon',
+        name: 'Mockoon',
+        description: 'Local Mocking Tool for Rapid API Design',
+        icon: 'https://mockoon.com/images/logo.svg',
+        category: 'apis',
+        rank: 'RANK A',
+        mastery: 84,
+        tier: 2,
+        prereqIds: ['postman'],
+        tags: ['Mocking', 'Prototyping', 'Local API']
+    }
+]
+
+export const skillTreeConnections: SkillConnection[] = [
+    // Languages connections (JavaScript -> PHP & Python, Python -> Go)
+    { from: 'javascript', to: 'php' },
+    { from: 'javascript', to: 'python' },
+    { from: 'python', to: 'go' },
+
+    // Databases connections (SQLite -> MySQL & PostgreSQL, PostgreSQL -> Redis)
+    { from: 'sqlite', to: 'mysql' },
+    { from: 'sqlite', to: 'postgresql' },
+    { from: 'postgresql', to: 'redis' },
+
+    // DevOps connections (Git -> Docker & CI/CD)
+    { from: 'git', to: 'docker' },
+    { from: 'git', to: 'cicd' },
+
+    // APIs connections (REST API -> WebSocket, Postman, Swagger)
+    { from: 'restapi', to: 'websocket' },
+    { from: 'restapi', to: 'postman' },
+    { from: 'restapi', to: 'swagger' },
+    { from: 'websocket', to: 'asyncapi' },
+    { from: 'postman', to: 'mockoon' }
+]
+
+export const skills = {
+    languages: skillTreeNodes.filter(n => n.category === 'languages'),
+    databases: skillTreeNodes.filter(n => n.category === 'databases'),
+    devops: skillTreeNodes.filter(n => n.category === 'devops'),
+    others: skillTreeNodes.filter(n => n.category === 'apis')
+}
+

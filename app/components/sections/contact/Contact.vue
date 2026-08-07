@@ -47,40 +47,45 @@
                   <!-- Email -->
                   <a :href="`mailto:${personalInfo.email}`" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
                      <div class="absolute inset-0 bg-black transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-red-600 border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
-                        <span class="text-white font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-transform">SEND EMAIL</span>
+                     <div class="absolute inset-0 bg-red-600 border-2 border-black flex items-center justify-center gap-3 px-4 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1">
+                        <ChibiHead character="joker" size="lg" class="transform group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300" />
+                        <span class="text-white font-black text-lg md:text-xl italic uppercase tracking-wider group-hover:scale-105 transition-transform">SEND EMAIL</span>
                      </div>
                   </a>
 
                   <!-- WhatsApp -->
                   <a :href="personalInfo.socials.whatsapp" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
                      <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
-                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">WHATSAPP</span>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center gap-3 px-4 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <ChibiHead character="morgana" size="lg" class="transform group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
+                        <span class="text-white group-hover:text-red-600 font-black text-lg md:text-xl italic uppercase tracking-wider group-hover:scale-105 transition-all">WHATSAPP</span>
                      </div>
                   </a>
 
                   <!-- LinkedIn -->
                   <a :href="personalInfo.socials.linkedin" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
                      <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
-                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">LINKEDIN</span>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center gap-3 px-4 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <ChibiHead character="fox" size="lg" class="transform group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300" />
+                        <span class="text-white group-hover:text-red-600 font-black text-lg md:text-xl italic uppercase tracking-wider group-hover:scale-105 transition-all">LINKEDIN</span>
                      </div>
                   </a>
                   
                   <!-- GitHub -->
                   <a :href="personalInfo.socials.github" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
                      <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
-                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">GITHUB</span>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center gap-3 px-4 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <ChibiHead character="ryuji" size="lg" class="transform group-hover:scale-125 group-hover:rotate-12 transition-transform duration-300" />
+                        <span class="text-white group-hover:text-red-600 font-black text-lg md:text-xl italic uppercase tracking-wider group-hover:scale-105 transition-all">GITHUB</span>
                      </div>
                   </a>
 
                   <!-- Instagram -->
                   <a :href="personalInfo.socials.instagram" target="_blank" rel="noopener noreferrer" class="group relative block h-20 perspective-1000 max-md:mx-1">
                      <div class="absolute inset-0 bg-red-600 transform translate-x-2 translate-y-2 max-md:translate-x-1 max-md:translate-y-1 transition-transform group-hover:translate-x-3 group-hover:translate-y-3"></div>
-                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
-                        <span class="text-white group-hover:text-red-600 font-black text-xl italic uppercase tracking-wider group-hover:scale-110 transition-all">INSTAGRAM</span>
+                     <div class="absolute inset-0 bg-black border-2 border-black flex items-center justify-center gap-3 px-4 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:bg-white">
+                        <ChibiHead character="panther" size="lg" class="transform group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-300" />
+                        <span class="text-white group-hover:text-red-600 font-black text-lg md:text-xl italic uppercase tracking-wider group-hover:scale-105 transition-all">INSTAGRAM</span>
                      </div>
                   </a>
                </div>
@@ -101,6 +106,7 @@
 
 <script setup lang="ts">
 import { personalInfo } from '~/data/content'
+import ChibiHead from '~/components/ui/ChibiHead.vue'
 </script>
 
 

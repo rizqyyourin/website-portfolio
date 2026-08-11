@@ -3,6 +3,7 @@
     <Hero />
     <TechStack />
     <Projects />
+    <Experience />
     <Skills />
     <Contact />
   </div>
@@ -13,6 +14,7 @@ import { useHead } from '#app'
 import Hero from '~/components/sections/hero/Hero.vue'
 import TechStack from '~/components/sections/tech-stack/TechStack.vue'
 import Projects from '~/components/sections/projects/Projects.vue'
+import Experience from '~/components/sections/experience/Experience.vue'
 import Skills from '~/components/sections/skills/Skills.vue'
 import Contact from '~/components/sections/contact/Contact.vue'
 import { navigation, projects } from '~/data/content'

@@ -21,6 +21,7 @@ export const navigation = [
     { name: 'Home', href: '#home' },
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
 ]
@@ -424,4 +425,95 @@ export const skills = {
     devops: skillTreeNodes.filter(n => n.category === 'devops'),
     others: skillTreeNodes.filter(n => n.category === 'apis')
 }
+
+export interface ExperienceHighlight {
+    title: string
+    description: string
+}
+
+export interface ExperienceItem {
+    id: string
+    role: string
+    company: string
+    companyUrl?: string
+    type: 'Internship' | 'Full-time' | 'Freelance' | 'Education'
+    period: string
+    location: string
+    workMode: 'Hybrid' | 'On-site' | 'Remote'
+    rank: 'RANK MAX' | 'RANK S' | 'RANK A+' | 'RANK A'
+    summary: string
+    highlights: ExperienceHighlight[]
+    skills: string[]
+    icon: string
+}
+
+export const experiences: ExperienceItem[] = [
+    {
+        id: 'solutif',
+        role: 'Fullstack Developer',
+        company: 'Solutif',
+        companyUrl: 'https://solutif.co.id',
+        type: 'Internship',
+        period: 'Dec 2025 - Jun 2026 · 7 mos',
+        location: 'South Jakarta, Jakarta, Indonesia',
+        workMode: 'Hybrid',
+        rank: 'RANK MAX',
+        summary: 'Engineered enterprise ticketing, SLA automation, multi-tenant isolation, and dynamic analytics dashboard for SaaS & IT Consulting environment.',
+        highlights: [
+            {
+                title: 'Backend & Multi-Tenant Architecture',
+                description: 'Designed a schema-based multi-tenant isolation system with cross-tenant materialized views, and engineered an automated SLA matching engine with real-time ticket auto-escalation rules.'
+            },
+            {
+                title: 'Product Features & Analytics',
+                description: 'Built core ticketing functionalities (ticket handling, email thread tracking, WebSocket-based user presence) and deployed a dynamic CSAT reporting dashboard equipped with sentiment analysis.'
+            },
+            {
+                title: 'Frontend Optimization & API Specs',
+                description: 'Refactored Vue/Nuxt state management using Vue Query for optimistic updates, and authored OpenAPI/AsyncAPI specifications alongside Mockoon setups for specs documentation.'
+            }
+        ],
+        skills: ['PHP', 'Go', 'Vue.js', 'Nuxt', 'Vue Query', 'WebSockets', 'PostgreSQL', 'OpenAPI', 'AsyncAPI', 'Multi-Tenant'],
+        icon: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
+    },
+    {
+        id: 'bintang-pelajar',
+        role: 'Fullstack Developer',
+        company: 'PT. Bintang Pelajar',
+        type: 'Internship',
+        period: 'Jan 2024 - Feb 2024 · 2 mos',
+        location: 'Bogor, West Java, Indonesia',
+        workMode: 'On-site',
+        rank: 'RANK S',
+        summary: 'Assisted the development team in extending SIMTEG (Integrated System) for student event attendance tracking.',
+        highlights: [
+            {
+                title: 'Attendance System Module',
+                description: 'Assisted the team to develop a new menu in SIMTEG (Integrated System) Bintang Pelajar for student event attendance using CodeIgniter 3 and MySQL.'
+            }
+        ],
+        skills: ['CodeIgniter 3', 'PHP', 'MySQL', 'Web Development'],
+        icon: 'https://cdn-icons-png.flaticon.com/512/2991/2991148.png'
+    },
+    {
+        id: 'undip',
+        role: 'Bachelor of Computer Engineering',
+        company: 'Diponegoro University',
+        type: 'Education',
+        period: '2021 - 2025',
+        location: 'Semarang, Central Java, Indonesia',
+        workMode: 'On-site',
+        rank: 'RANK A+',
+        summary: 'Fresh graduate in Computer Engineering. Interested in IT Industry and specialized in Fullstack Web Development (PHP & JS framework ecosystem).',
+        highlights: [
+            {
+                title: 'Computer Engineering Degree',
+                description: 'Mastered software engineering principles, algorithms, web development, and database architectures with practical project implementations.'
+            }
+        ],
+        skills: ['Computer Engineering', 'Web Development', 'Algorithms', 'Fullstack JS/PHP'],
+        icon: 'https://cdn-icons-png.flaticon.com/512/2231/2231649.png'
+    }
+]
+
 

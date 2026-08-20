@@ -10,7 +10,8 @@
   }
 
   body {
-    @apply bg-zinc-900 text-white overflow-x-hidden;
+    @apply bg-zinc-900 text-white;
+    overflow-x: clip;
     font-family: 'Inter', sans-serif;
     /* Fallback, we'll style with utility classes */
     background-image: url("https://www.transparenttextures.com/patterns/stardust.png");

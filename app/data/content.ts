@@ -18,10 +18,10 @@ export const personalInfo = {
 }
 
 export const navigation = [
-    { name: 'Home', href: '#home' },
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Blueprint', href: '#blueprint' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
 ]

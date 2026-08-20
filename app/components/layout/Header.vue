@@ -12,8 +12,8 @@
 
       <nav class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div class="flex justify-between items-center h-20 md:h-24">
-          <!-- Logo (Phantom Thief Style) -->
-          <NuxtLink to="/" class="group relative perspective-1000">
+          <!-- Logo (Phantom Thief Style) - Links to Home / Top -->
+          <a href="#home" aria-label="Back to top" class="group relative perspective-1000">
              <div class="transform -skew-x-12 bg-white border-2 border-red-600 px-4 py-2 shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] group-hover:bg-red-600 group-hover:border-white transition-colors duration-300">
                 <span class="font-black text-2xl md:text-3xl text-black italic tracking-tighter transform skew-x-12 group-hover:text-white block">
                    YOURIN
@@ -21,7 +21,7 @@
              </div>
              <!-- Star decoration -->
              <div class="absolute -top-3 -right-3 text-red-600 text-2xl animate-spin-slow pointer-events-none">★</div>
-          </NuxtLink>
+          </a>
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-6">
@@ -87,7 +87,7 @@ const isMobileMenuOpen = ref(false)
 const activeSection = ref('home')
 
 const handleScroll = () => {
-  const sections = navigation.map(item => item.href.substring(1))
+  const sections = ['home', ...navigation.map(item => item.href.substring(1))]
 
   // Must be below the fixed header (~104px) plus scroll-padding,
   // otherwise anchored sections land just past the threshold and

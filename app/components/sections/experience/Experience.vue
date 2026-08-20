@@ -86,13 +86,8 @@
                     class="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-3 md:mb-4 transform md:skew-x-6"
                     :class="index % 2 === 0 ? 'md:justify-end' : 'md:justify-start'"
                   >
-                    <!-- Rank Badge -->
-                    <span class="bg-red-600 text-white font-black italic text-[10px] sm:text-xs tracking-wider px-2 sm:px-3 py-0.5 sm:py-1 border border-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase">
-                      {{ item.rank }}
-                    </span>
-
                     <!-- Work Type Badge -->
-                    <span class="bg-white text-black font-black italic text-[10px] sm:text-xs tracking-wider px-2 sm:px-3 py-0.5 sm:py-1 border border-black uppercase">
+                    <span class="bg-red-600 text-white font-black italic text-[10px] sm:text-xs tracking-wider px-2 sm:px-3 py-0.5 sm:py-1 border border-white uppercase">
                       {{ item.type }} • {{ item.workMode }}
                     </span>
 

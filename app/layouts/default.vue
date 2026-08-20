@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen relative overflow-hidden bg-zinc-900 text-white font-sans selection:bg-red-600 selection:text-white">
+  <div class="min-h-screen relative overflow-x-clip bg-zinc-900 text-white font-sans selection:bg-red-600 selection:text-white">
     <!-- P5 Global Background Elements -->
     <div class="fixed inset-0 z-0 pointer-events-none opacity-20 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay"></div>
     <div class="fixed inset-0 z-0 pointer-events-none bg-gradient-to-br from-red-600/5 to-transparent mix-blend-color-dodge"></div>

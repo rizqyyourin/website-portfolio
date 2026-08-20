@@ -1,7 +1,7 @@
 export const personalInfo = {
     name: "Ahmad Rizqy Yourin",
-    role: "Ahmad Rizqy Yourin - Laravel Developer",
-    title: "A Fullstack Laravel Developer",
+    role: "Ahmad Rizqy Yourin - Fullstack Developer",
+    title: "A Fullstack Developer",
     bio: "Delivering end-to-end web solutions, specializing in crafting scalable backends and intuitive frontends with a modern tech stack.",
     email: "rizqyyourin6@gmail.com",
     phone: "+6285774414941", // Formatted for WhatsApp link

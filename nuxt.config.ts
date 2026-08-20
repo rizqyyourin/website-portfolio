@@ -1,7 +1,10 @@
-const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://yourin.my.id'
+const siteUrl =
+  (globalThis as typeof globalThis & {
+    process?: { env?: Record<string, string | undefined> }
+  }).process?.env?.NUXT_PUBLIC_SITE_URL || 'https://yourin.my.id'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default {
   compatibilityDate: '2025-11-18',
   future: {
     compatibilityVersion: 4,
@@ -56,11 +59,11 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Ahmad Rizqy Yourin - Full-stack Laravel developer. Explore my portfolio of Laravel projects, expertise in Livewire and SaaS solutions. Available for freelance work.'
+          content: 'Ahmad Rizqy Yourin - Fullstack Developer specializing in building modern web applications, scalable backend architectures, and high-performance user interfaces. Explore my portfolio and projects.'
         },
         {
           name: 'keywords',
-          content: 'Ahmad Rizqy Yourin, yourin, Laravel developer, Laravel specialist, PHP developer, web developer, full-stack developer, Livewire'
+          content: 'Ahmad Rizqy Yourin, yourin, Fullstack Developer, Web Developer, Nuxt, Vue.js, Go, PHP, Laravel, TypeScript, Tailwind CSS, PostgreSQL, REST API'
         },
         {
           property: 'og:type',
@@ -68,11 +71,11 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:title',
-          content: 'Ahmad Rizqy Yourin - Laravel Developer'
+          content: 'Ahmad Rizqy Yourin - Fullstack Developer'
         },
         {
           property: 'og:description',
-          content: 'Full-stack Laravel developer showcasing projects and expertise in Laravel ecosystem, Livewire, and modern web development.'
+          content: 'Fullstack Developer crafting scalable backends and modern web applications with Nuxt, Go, PHP, and modern web technologies.'
         },
         {
           property: 'og:url',
@@ -127,21 +130,28 @@ export default defineNuxtConfig({
             name: 'Ahmad Rizqy Yourin',
             url: siteUrl,
             email: 'rizqyyourin6@gmail.com',
-            jobTitle: 'Laravel Developer',
+            jobTitle: 'Fullstack Developer',
             image: `${siteUrl}/images/profile.jpg`,
             sameAs: [
               'https://www.upwork.com/freelancers/~01103c6049d69f345f',
               'https://github.com/rizqyyourin'
             ],
             knowsAbout: [
-              'Laravel',
-              'PHP',
-              'Livewire',
-              'Tailwind CSS',
-              'Vue.js',
               'JavaScript',
+              'TypeScript',
+              'PHP',
+              'Go',
+              'Python',
+              'Vue.js',
+              'Nuxt',
+              'Laravel',
+              'Tailwind CSS',
+              'PostgreSQL',
               'MySQL',
-              'SQLite'
+              'Redis',
+              'Docker',
+              'REST API',
+              'WebSockets'
             ]
           }),
           key: 'schema-person'
@@ -164,4 +174,4 @@ export default defineNuxtConfig({
       }
     }
   }
-})
+}

@@ -26,7 +26,7 @@ const projectsSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Ahmad Rizqy Yourin - Featured Projects',
-  description: 'Portfolio of Laravel projects by Ahmad Rizqy Yourin',
+  description: 'Portfolio of fullstack projects by Ahmad Rizqy Yourin',
   mainEntity: projects.map(project => ({
     '@type': 'SoftwareApplication',
     name: project.title,

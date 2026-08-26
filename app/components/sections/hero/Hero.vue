@@ -53,73 +53,36 @@
 
         </div>
 
-        <!-- Visual Side (Phantom Thief / Code Aesthetic) -->
+        <!-- Visual Side (3D Three.js Metaverse Card with SSR Fallback) -->
         <div data-aos="p5-slide-left" data-aos-duration="900" data-aos-delay="200" data-aos-once="true" class="hidden lg:flex justify-center relative perspective-1000">
-           <!-- Character Silhouette / Polygon Art Placeholder -->
-           <div class="relative w-96 h-[500px] transform rotate-y-12 rotate-z-2 hover:rotate-y-0 transition-transform duration-700 ease-out">
-              <!-- Back Card -->
-              <div class="absolute inset-0 bg-white transform translate-x-4 translate-y-4 -skew-x-6 border-4 border-black"></div>
-              
-              <!-- Front Image Container -->
-              <div class="absolute inset-0 bg-zinc-900 border-4 border-white overflow-hidden transform -skew-x-6 relative group">
-                 <!-- Image Overlay Gradient -->
-                 <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent mix-blend-normal z-10 opacity-50"></div>
+          <ClientOnly>
+            <HeroCard3D />
+            <template #placeholder>
+              <!-- SSR / Low Power 2D Fallback Card -->
+              <div class="relative w-96 h-[500px] transform rotate-y-12 rotate-z-2 transition-transform duration-700 ease-out">
+                 <!-- Back Card -->
+                 <div class="absolute inset-0 bg-white transform translate-x-4 translate-y-4 -skew-x-6 border-4 border-black"></div>
                  
-                 <div class="flex items-center justify-center w-full h-full p-8 pb-24">
-                     <img src="/images/profile.jpg" 
-                          alt="Ahmad Rizqy Yourin - profile photo" 
-                          class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]" 
-                     />
-                 </div>
-                 
-                 <!-- Code Snippet Overlay -->
-                 <div class="absolute bottom-0 left-0 w-full px-4 py-3 bg-black/90 text-red-500 font-mono text-xs z-20">
-                   <p class="typewriter" style="--tw-width: 32ch; --tw-steps: 32">>> INFILTRATION SUCCESSFUL</p>
-                   <p class="typewriter animate-delay-2000" style="--tw-width: 41ch; --tw-steps: 41">>> TARGET ACQUIRED: FULLSTACK_DEV</p>
-                   <p class="typewriter animate-delay-4000" style="--tw-width: 31ch; --tw-steps: 31">>> SKILLS LOADING... 100%</p>
+                 <!-- Front Image Container -->
+                 <div class="absolute inset-0 bg-zinc-900 border-4 border-white overflow-hidden transform -skew-x-6 relative group">
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent mix-blend-normal z-10 opacity-50"></div>
+                    
+                    <div class="flex items-center justify-center w-full h-full p-8 pb-24">
+                        <img src="/images/profile.jpg" 
+                             alt="Ahmad Rizqy Yourin - profile photo" 
+                             class="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]" 
+                        />
+                    </div>
+                    
+                    <div class="absolute bottom-0 left-0 w-full px-4 py-3 bg-black/90 text-red-500 font-mono text-xs z-20">
+                      <p class="typewriter" style="--tw-width: 32ch; --tw-steps: 32">>> INFILTRATION SUCCESSFUL</p>
+                      <p class="typewriter animate-delay-2000" style="--tw-width: 41ch; --tw-steps: 41">>> TARGET ACQUIRED: FULLSTACK_DEV</p>
+                      <p class="typewriter animate-delay-4000" style="--tw-width: 31ch; --tw-steps: 31">>> SKILLS LOADING... 100%</p>
+                    </div>
                  </div>
               </div>
-
-              <!-- Floating Tech Icons -->
-              <div class="absolute inset-0 pointer-events-none">
-                 <!-- Laravel (Top Right) -->
-                 <div class="absolute -right-8 top-12 w-16 h-16 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#dc2626] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/3840px-Laravel.svg.png" alt="Laravel logo" loading="lazy">
-                </div>
-                 <!-- PHP (Bottom Left) -->
-                 <div class="absolute -left-6 bottom-20 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#777bb4] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1280px-PHP-logo.svg.png" alt="PHP logo" loading="lazy" />
-                 </div>
-                 <!-- JS (Top Left) -->
-                 <div class="absolute -left-8 top-10 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#f0db4f] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript logo" loading="lazy" />
-                 </div>
-                 <!-- Python (Bottom Right) -->
-                 <div class="absolute -right-4 bottom-32 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#3776ab] z-30">
-                    <img src="https://images.icon-icons.com/2699/PNG/512/python_logo_icon_168886.png" alt="Python logo" loading="lazy" />
-                 </div>
-                 <!-- Go (Top Center-Right) -->
-                 <div class="absolute right-20 -top-8 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#00add8] z-30">
-                    <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_LightBlue.png" alt="Go logo" loading="lazy" />
-                 </div>
-                 <!-- Nuxt (Bottom Center) -->
-                 <div class="absolute left-1/2 -bottom-8 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#00c58e] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Nuxt_logo.svg/960px-Nuxt_logo.svg.png" alt="Nuxt logo" loading="lazy" />
-                 </div>
-                 <!-- Vue (Left Center) -->
-                 <div class="absolute -left-8 top-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-1 shadow-[4px_4px_0px_0px_#42b883] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/3840px-Vue.js_Logo_2.svg.png" alt="Vue.js logo" loading="lazy" />
-                 </div>
-                 <!-- React (Right Center) -->
-                 <div class="absolute -right-8 top-1/2 w-14 h-14 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-2 shadow-[4px_4px_0px_0px_#61dafb] z-30">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" alt="React logo" loading="lazy" />
-                 </div>
-                 <!-- Next.js (Top Center-Left) -->
-                 <div class="absolute left-20 -top-10 w-12 h-12 bg-white rounded-full flex items-center justify-center border-4 border-black animate-float-delay-3 shadow-[4px_4px_0px_0px_#000000] z-30">
-                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/nextjs-icon.png" alt="Next.js logo" loading="lazy" />
-                 </div>
-              </div>
-           </div>
+            </template>
+          </ClientOnly>
         </div>
       </div>
     </div>
@@ -131,6 +94,7 @@
 
 <script setup lang="ts">
 import { personalInfo } from '~/data/content'
+import HeroCard3D from './HeroCard3D.vue'
 </script>
 
 

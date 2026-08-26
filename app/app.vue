@@ -2,7 +2,7 @@
   <div style="background-color: #000; min-height: 100vh;">
     <ClientOnly>
       <LoadingScreen :is-loading="isLoading" :progress="progress" />
-      <LiveViewerBadge v-if="!isLoading" />
+      <ChatWidget v-if="!isLoading" />
       <template #placeholder>
         <!-- Loading screen for SSR - matches LoadingScreen exactly -->
         <div class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden ssr-loading-bg">
@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { useLoading } from '~/composables/useLoading'
 import LoadingScreen from '~/components/ui/LoadingScreen.vue'
-import LiveViewerBadge from '~/components/ui/LiveViewerBadge.vue'
+import ChatWidget from '~/components/ui/ChatWidget.vue'
 
 const { isLoading, progress } = useLoading()
 const { $refreshAos } = useNuxtApp()

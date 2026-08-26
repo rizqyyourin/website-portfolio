@@ -1,5 +1,10 @@
 <template>
   <section id="tech-stack" class="py-24 md:py-32 bg-zinc-900 relative max-md:overflow-hidden">
+    <!-- 3D Cyber Wave Terrain & Particle Background (Option 3) -->
+    <ClientOnly>
+      <ArsenalBg3D />
+    </ClientOnly>
+
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
       
       <!-- P5 Section Header -->
@@ -75,7 +80,7 @@
           </div>
         </div>
 
-        <!-- Content Side -->
+        <!-- Content Side (Direct Tech Logo Cards Showcase) -->
         <div 
           data-aos="p5-wipe-right"
           data-aos-duration="800"
@@ -84,38 +89,50 @@
           @touchstart.passive="onTouchStart"
           @touchend.passive="onTouchEnd"
         >
-           <div class="absolute -inset-6 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none max-md:hidden"></div>
+           <div class="absolute -inset-4 border-4 border-white transform skew-x-2 opacity-30 pointer-events-none max-md:hidden"></div>
            
            <transition :name="slideTransition" mode="out-in">
             <div
               :key="selectedStack.id"
-              class="space-y-6 md:space-y-8 bg-black/50 p-4 md:p-6 backdrop-blur-sm border-2 border-white/20 max-md:skew-x-0 md:transform md:-skew-x-2"
+              class="bg-black/50 p-4 sm:p-6 backdrop-blur-sm border-2 border-white/20 max-md:skew-x-0 md:transform md:-skew-x-2"
             >
-              <div class="text-left relative max-md:text-center">
-                <div class="absolute -top-10 -left-10 w-0 h-0 border-l-[50px] border-l-transparent border-t-[50px] border-t-red-600 border-r-[50px] border-r-transparent transform -rotate-45 max-md:hidden"></div>
-
-                <h3 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 italic max-md:skew-x-0 md:transform md:skew-x-2 leading-none" v-html="selectedStack.title"></h3>
-                <p class="text-base sm:text-xl text-gray-300 font-bold font-mono max-md:skew-x-0 md:transform md:skew-x-2 border-l-4 border-red-600 pl-4 max-md:border-l-0 max-md:pl-0 max-md:px-2">
-                  {{ selectedStack.description }}
-                </p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4 max-md:skew-x-0 md:transform md:skew-x-2">
+              <!-- Direct Tech Stack Equipment Cards Grid -->
+              <div 
+                class="grid grid-cols-2 gap-3 sm:gap-5 items-stretch"
+                :class="selectedStack.items.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'"
+              >
                 <div 
                   v-for="(item, index) in selectedStack.items" 
                   :key="`${selectedStack.id}-${item.name}`"
-                  class="arsenal-equip-item group relative overflow-hidden bg-white border-4 border-black p-3 sm:p-4 transition-all duration-300 active:scale-95 sm:hover:scale-110 sm:hover:rotate-3 sm:hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] z-10"
+                  class="arsenal-equip-item group relative bg-white border-4 border-black p-4 sm:p-5 flex flex-col items-center justify-between min-h-[220px] sm:min-h-[280px] transition-all duration-300 active:scale-95 hover:scale-105 hover:-translate-y-2 hover:rotate-1 shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] hover:shadow-[10px_10px_0px_0px_rgba(255,255,255,1)] overflow-hidden z-10"
                   :style="{ '--equip-delay': `${index * (isMobile ? 45 : 60)}ms` }"
                 >
-                  <div class="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)] pointer-events-none z-20"></div>
+                  <!-- Background Halftone Accent -->
+                  <div class="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.15)] pointer-events-none z-20"></div>
+                  <div class="absolute top-0 right-0 w-16 h-16 bg-[repeating-linear-gradient(45deg,transparent,transparent_4px,rgba(0,0,0,0.06)_4px,rgba(0,0,0,0.06)_8px)] pointer-events-none"></div>
 
-                  <div class="relative z-10 flex flex-col items-center justify-center h-full space-y-2">
-                    <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center sm:group-hover:animate-bounce">
+                  <!-- Card Slot Header Badge -->
+                  <div class="w-full flex items-center justify-between z-10 mb-2">
+                    <span class="bg-black text-white text-[10px] sm:text-xs font-mono font-black px-2 py-0.5 transform -skew-x-12 border border-black shadow-[2px_2px_0px_0px_rgba(220,38,38,1)]">
+                      SLOT 0{{ index + 1 }}
+                    </span>
+                    <span class="text-red-600 text-xs font-black select-none group-hover:animate-spin-slow">★</span>
+                  </div>
+
+                  <!-- Tech Logo (Big & Clear) -->
+                  <div class="relative z-10 flex-1 flex items-center justify-center my-2 sm:my-4 w-full">
+                    <div class="w-16 h-16 sm:w-24 sm:h-24 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                       <img :src="item.logo" :alt="item.name" loading="lazy" class="w-full h-full object-contain filter drop-shadow-md" />
                     </div>
-                    <span class="font-black text-black text-xs sm:text-sm uppercase bg-white px-1 text-center leading-tight">
-                      {{ item.name }}
-                    </span>
+                  </div>
+
+                  <!-- Tech Name Banner (Skewed & Bold) -->
+                  <div class="w-full z-10 pt-2 border-t-2 border-black/10">
+                    <div class="bg-black group-hover:bg-red-600 px-2 py-1.5 transform -skew-x-12 transition-colors duration-200 border-2 border-black">
+                      <span class="block font-black text-white text-xs sm:text-sm uppercase tracking-wider text-center transform skew-x-12 truncate">
+                        {{ item.name }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -149,6 +166,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { techStacks } from '~/data/content'
+import ArsenalBg3D from './ArsenalBg3D.vue'
 
 const selectedStackId = ref('tall')
 const slideDirection = ref<'next' | 'prev'>('next')

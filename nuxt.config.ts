@@ -15,6 +15,7 @@ export default {
   ssr: true,
 
   runtimeConfig: {
+    openrouterApiKey: '', // Auto-filled from NUXT_OPENROUTER_API_KEY env var
     public: {
       siteUrl,
     },

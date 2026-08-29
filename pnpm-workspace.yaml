@@ -1,3 +1,6 @@
+packages:
+  - '.'
+
 # pnpm 11: dependency build scripts must be explicitly allowed via allowBuilds
 # (the older onlyBuiltDependencies list was removed in v11)
 allowBuilds:

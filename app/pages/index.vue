@@ -19,35 +19,24 @@ import ProjectFeatures from '~/components/sections/features/ProjectFeatures.vue'
 import Experience from '~/components/sections/experience/Experience.vue'
 import Skills from '~/components/sections/skills/Skills.vue'
 import Contact from '~/components/sections/contact/Contact.vue'
-import { navigation, projects } from '~/data/content'
+import { projects } from '~/data/content'
 
 const siteUrl = useRuntimeConfig().public.siteUrl
 
-// Structured data for projects using dynamic data
-const projectsSchema = {
+// ItemList of featured projects (replaces CollectionPage for single-page context)
+const projectsListSchema = {
   '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: 'Ahmad Rizqy Yourin - Featured Projects',
-  description: 'Portfolio of fullstack projects by Ahmad Rizqy Yourin',
-  mainEntity: projects.map(project => ({
-    '@type': 'SoftwareApplication',
-    name: project.title,
-    url: project.link,
-    description: project.description,
-    applicationCategory: 'WebApplication', // Generalized
-    operatingSystem: 'Web'
-  }))
-}
-
-// Breadcrumb schema built from navigation data
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: navigation.map((item, index) => ({
+  '@type': 'ItemList',
+  name: 'Featured Projects by Ahmad Rizqy Yourin',
+  description: 'A curated list of fullstack web application projects built by Ahmad Rizqy Yourin.',
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  numberOfItems: projects.length,
+  itemListElement: projects.map((project, index) => ({
     '@type': 'ListItem',
     position: index + 1,
-    name: item.name,
-    item: item.href === '#home' ? siteUrl : `${siteUrl}/${item.href}`
+    url: project.link,
+    name: project.title,
+    description: project.description
   }))
 }
 
@@ -55,13 +44,8 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      innerHTML: JSON.stringify(projectsSchema),
-      key: 'schema-projects'
-    },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(breadcrumbSchema),
-      key: 'schema-breadcrumb'
+      innerHTML: JSON.stringify(projectsListSchema),
+      key: 'schema-projects-list'
     }
   ]
 })

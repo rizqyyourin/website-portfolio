@@ -200,7 +200,7 @@ export default defineEventHandler(async (event) => {
         'X-Title': 'Yourin Portfolio Chatbot'
       },
       body: JSON.stringify({
-        model: 'stealth/ox-alpha',
+        model: 'minimax/minimax-m3:free',
         messages,
         max_tokens: 500,
         temperature: 0.7

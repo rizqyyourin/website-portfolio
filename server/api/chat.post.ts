@@ -120,7 +120,7 @@ TECH STACKS HE USES:
 - Hyper-Go-Nuxt Stack: Hypervel + Goravel + Nuxt (microservices architecture)
 
 PROJECTS:
-1. ERP Minimal (erp.yourin.my.id) — Lightweight ERP with inventory management, sales tracking, financial reporting for small businesses. Built with Laravel, Livewire, PostgreSQL.
+1. Stokmu (stokmu.yourin.my.id) — AI-assisted stock management system for monitoring inventory levels, automating stock tracking, and generating smart insights. Built with Next.js, Turso, Tailwind CSS (T3 Stack).
 2. QPay (qpay.yourin.my.id) — QR code-based payment system for seamless smartphone transactions. Built with Laravel, Vue, PostgreSQL.
 3. Ticketin (ticketin.yourin.my.id) — Customer experience CRM SaaS for handling complaints via service requests and email-based support channels. Built with Next.js, Prisma, PostgreSQL.
 

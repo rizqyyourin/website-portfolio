@@ -121,17 +121,16 @@ export const techStacks = [
 
 export const projects = [
     {
-        title: "ERP Minimal",
-        description: "Lightweight enterprise resource planning system with inventory management, sales tracking, and financial reporting for small businesses.",
-        image: "/images/erp/1.png",
+        title: "Stokmu",
+        description: "AI-assisted stock management system that helps businesses monitor inventory levels, automate stock tracking, and generate smart insights for better decision-making.",
+        image: "/images/stokmu/1.png",
         images: [
-            "/images/erp/1.png",
-            "/images/erp/2.png",
-            "/images/erp/3.png",
-            "/images/erp/4.png"
+            "/images/stokmu/1.png",
+            "/images/stokmu/2.png",
+            "/images/stokmu/3.png"
         ],
-        link: "https://erp.yourin.my.id/",
-        tags: ["Laravel", "Livewire", "PostgreSQL"]
+        link: "https://stokmu.yourin.my.id/",
+        tags: ["Next.js", "Turso", "Tailwind CSS"]
     },
     {
         title: "QPay - QR Payment System",
